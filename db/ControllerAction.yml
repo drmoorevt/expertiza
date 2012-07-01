@@ -4,88 +4,673 @@
     name: view_default
     permission_id: "3"
     id: "1"
+    url_to_use: 
     site_controller_id: "1"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: view
     permission_id: "3"
     id: "2"
+    url_to_use: 
     site_controller_id: "1"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: list
     permission_id: 
     id: "3"
+    url_to_use: 
     site_controller_id: "7"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: list
     permission_id: 
     id: "4"
+    url_to_use: 
     site_controller_id: "6"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: login
     permission_id: "4"
     id: "5"
+    url_to_use: 
     site_controller_id: "3"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: logout
     permission_id: "4"
     id: "6"
+    url_to_use: 
     site_controller_id: "3"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: link
     permission_id: "4"
     id: "7"
+    url_to_use: 
     site_controller_id: "5"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: list
     permission_id: 
     id: "8"
+    url_to_use: 
     site_controller_id: "1"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: list
     permission_id: 
     id: "9"
+    url_to_use: 
     site_controller_id: "8"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: list
     permission_id: 
     id: "10"
+    url_to_use: 
     site_controller_id: "2"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: list
     permission_id: 
     id: "11"
+    url_to_use: 
     site_controller_id: "5"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: list
     permission_id: 
     id: "12"
+    url_to_use: 
     site_controller_id: "9"
-- !ruby/object:ControllerAction 
-  attributes: 
-    name: forgotten
-    permission_id: "4"
-    id: "13"
-    site_controller_id: "3"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: login_failed
     permission_id: "4"
     id: "14"
+    url_to_use: 
     site_controller_id: "3"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list
+    permission_id: "7"
+    id: "15"
+    url_to_use: 
+    site_controller_id: "10"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list_instructors
+    permission_id: "9"
+    id: "16"
+    url_to_use: ""
+    site_controller_id: "12"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list_administrators
+    permission_id: "6"
+    id: "17"
+    url_to_use: ""
+    site_controller_id: "12"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list_super_administrators
+    permission_id: "1"
+    id: "18"
+    url_to_use: ""
+    site_controller_id: "12"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list_folders
+    permission_id: "7"
+    id: "19"
+    url_to_use: ""
+    site_controller_id: "13"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: create
+    permission_id: "8"
+    id: "20"
+    url_to_use: ""
+    site_controller_id: "52"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list
+    permission_id: "7"
+    id: "21"
+    url_to_use: ""
+    site_controller_id: "15"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: create_questionnaire
+    permission_id: "7"
+    id: "22"
+    url_to_use: ""
+    site_controller_id: "15"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: edit_questionnaire
+    permission_id: "7"
+    id: "23"
+    url_to_use: ""
+    site_controller_id: "15"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: copy_questionnaire
+    permission_id: "7"
+    id: "24"
+    url_to_use: ""
+    site_controller_id: "15"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: save_questionnaire
+    permission_id: "7"
+    id: "25"
+    url_to_use: ""
+    site_controller_id: "15"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: add_student
+    permission_id: "7"
+    id: "26"
+    url_to_use: ""
+    site_controller_id: "20"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: edit_team_members
+    permission_id: "7"
+    id: "28"
+    url_to_use: ""
+    site_controller_id: "20"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: new
+    permission_id: "8"
+    id: "29"
+    url_to_use: ""
+    site_controller_id: "52"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list
+    permission_id: "7"
+    id: "30"
+    url_to_use: ""
+    site_controller_id: "14"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list_students
+    permission_id: "7"
+    id: "31"
+    url_to_use: ""
+    site_controller_id: "20"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list
+    permission_id: "6"
+    id: "32"
+    url_to_use: ""
+    site_controller_id: "22"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list
+    permission_id: "8"
+    id: "33"
+    url_to_use: ""
+    site_controller_id: "23"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list_courses
+    permission_id: "7"
+    id: "34"
+    url_to_use: ""
+    site_controller_id: "20"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list_assignments
+    permission_id: "7"
+    id: "35"
+    url_to_use: ""
+    site_controller_id: "20"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: edit
+    permission_id: 
+    id: "36"
+    url_to_use: ""
+    site_controller_id: "26"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: create
+    permission_id: "4"
+    id: "37"
+    url_to_use: ""
+    site_controller_id: "27"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: submit
+    permission_id: 
+    id: "38"
+    url_to_use: ""
+    site_controller_id: "27"
+  attributes_cache: {}
+
 - !ruby/object:ControllerAction 
   attributes: 
     name: list
     permission_id: 
-    id: "15"
+    id: "39"
+    url_to_use: ""
+    site_controller_id: "28"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list_assignments
+    permission_id: 
+    id: "40"
+    url_to_use: ""
+    site_controller_id: "28"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list
+    permission_id: 
+    id: "41"
+    url_to_use: ""
+    site_controller_id: "29"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: start
+    permission_id: 
+    id: "42"
+    url_to_use: 
+    site_controller_id: "30"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: impersonate
+    permission_id: "8"
+    id: "43"
+    url_to_use: 
+    site_controller_id: "30"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list
+    permission_id: 
+    id: "44"
+    url_to_use: 
+    site_controller_id: "32"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list
+    permission_id: 
+    id: "45"
+    url_to_use: 
+    site_controller_id: "36"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list_surveys
+    permission_id: 
+    id: "46"
+    url_to_use: 
+    site_controller_id: "37"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: list
+    permission_id: 
+    id: "47"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: drill
+    permission_id: 
+    id: "48"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_questionnaires
+    permission_id: 
+    id: "49"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_author_feedbacks
+    permission_id: 
+    id: "50"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_review_rubrics
+    permission_id: 
+    id: "51"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_global_survey
+    permission_id: 
+    id: "52"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_surveys
+    permission_id: 
+    id: "53"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_course_evaluations
+    permission_id: 
+    id: "54"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_courses
+    permission_id: 
+    id: "55"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_assignments
+    permission_id: 
+    id: "56"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_teammate_reviews
+    permission_id: 
+    id: "59"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: change_handle
+    permission_id: "8"
+    id: "60"
+    url_to_use: 
+    site_controller_id: "20"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_metareview_rubrics
+    permission_id: 
+    id: "61"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: goto_teammatereview_rubrics
+    permission_id: 
+    id: "62"
+    url_to_use: 
+    site_controller_id: "38"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: view_my_scores
+    permission_id: "8"
+    id: "63"
+    url_to_use: 
+    site_controller_id: "33"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: signup_topics
+    permission_id: "8"
+    id: "64"
+    url_to_use: 
+    site_controller_id: "51"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: signup
+    permission_id: "8"
+    id: "65"
+    url_to_use: 
+    site_controller_id: "51"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: delete_signup
+    permission_id: "8"
+    id: "66"
+    url_to_use: 
+    site_controller_id: "51"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: index
+    permission_id: 
+    id: "67"
+    url_to_use: 
+    site_controller_id: "53"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: keys
+    permission_id: "8"
+    id: "68"
+    url_to_use: 
     site_controller_id: "10"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: add_dynamic_reviewer
+    permission_id: "8"
+    id: "69"
+    url_to_use: ""
+    site_controller_id: "32"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: release_reservation
+    permission_id: "8"
+    id: "70"
+    url_to_use: ""
+    site_controller_id: "32"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: show_available_submissions
+    permission_id: "8"
+    id: "71"
+    url_to_use: ""
+    site_controller_id: "32"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: assign_reviewer_dynamically
+    permission_id: "8"
+    id: "72"
+    url_to_use: ""
+    site_controller_id: "32"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: assign_metareviewer_dynamically
+    permission_id: "8"
+    id: "73"
+    url_to_use: ""
+    site_controller_id: "32"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: show_code_file
+    permission_id: "8"
+    id: "74"
+    url_to_use: 
+    site_controller_id: "55"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: show_code_file_diff
+    permission_id: "8"
+    id: "75"
+    url_to_use: 
+    site_controller_id: "55"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: show_all_submitted_files
+    permission_id: "8"
+    id: "76"
+    url_to_use: 
+    site_controller_id: "55"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: submit_comment
+    permission_id: "8"
+    id: "77"
+    url_to_use: 
+    site_controller_id: "55"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: submit_review_file
+    permission_id: "8"
+    id: "78"
+    url_to_use: 
+    site_controller_id: "55"
+  attributes_cache: {}
+
+- !ruby/object:ControllerAction 
+  attributes: 
+    name: team_details
+    permission_id: "8"
+    id: "79"
+    url_to_use: ""
+    site_controller_id: "51"
+  attributes_cache: {}
+

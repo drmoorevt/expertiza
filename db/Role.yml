@@ -1,31 +1,2125 @@
 --- 
 - !ruby/object:Role 
   attributes: 
-    name: Public
-    updated_at: 2006-10-29 22:22:07
-    cache: 
+    name: Student
+    created_at: 2012-06-30 17:25:34
+    cache: |
+      --- 
+      :menu: !ruby/object:Menu 
+        by_id: 
+          27: &id001 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 36
+            id: 27
+            label: Profile
+            name: profile
+            parent: 
+            parent_id: 
+            site_controller_id: 26
+            url: /profile/edit
+          1: &id006 !ruby/object:Menu::Node 
+            children: 
+            - 47
+            content_page_id: 1
+            controller_action_id: 
+            id: 1
+            label: Home
+            name: home
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /home
+          2: &id003 !ruby/object:Menu::Node 
+            children: 
+            - 14
+            content_page_id: 6
+            controller_action_id: 
+            id: 2
+            label: Contact Us
+            name: contact_us
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /contact_us
+          14: &id004 !ruby/object:Menu::Node 
+            content_page_id: 10
+            controller_action_id: 
+            id: 14
+            label: Credits &amp; Licence
+            name: credits
+            parent: 
+            parent_id: 2
+            site_controller_id: 
+            url: /credits
+          47: &id005 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 67
+            id: 47
+            label: Leaderboard
+            name: leaderboard
+            parent: 
+            parent_id: 1
+            site_controller_id: 53
+            url: /leaderboard/index
+          26: &id002 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 33
+            id: 26
+            label: Assignments
+            name: student_task
+            parent: 
+            parent_id: 
+            site_controller_id: 23
+            url: /student_task/list
+        by_name: 
+          profile: *id001
+          student_task: *id002
+          contact_us: *id003
+          credits: *id004
+          leaderboard: *id005
+          home: *id006
+        crumbs: 
+        - 1
+        root: &id007 !ruby/object:Menu::Node 
+          children: 
+          - 1
+          - 26
+          - 27
+          - 2
+          parent: 
+        selected: 
+          1: *id006
+        vector: 
+        - *id007
+        - *id006
+      :credentials: !ruby/object:Credentials 
+        actions: 
+          teams_users: 
+            list: false
+          course: 
+            list_folders: false
+          menu_items: 
+            list: false
+            link: true
+          tree_display: 
+            goto_author_feedbacks: false
+            list: false
+            goto_metareview_rubrics: false
+            goto_assignments: false
+            goto_questionnaires: false
+            goto_course_evaluations: false
+            goto_teammate_reviews: false
+            goto_global_survey: false
+            goto_review_rubrics: false
+            drill: false
+            goto_courses: false
+            goto_teammatereview_rubrics: false
+            goto_surveys: false
+          auth: 
+            logout: true
+            login: true
+            login_failed: true
+          profile: 
+            edit: true
+          student_task: 
+            list: true
+          institution: 
+            list: false
+          assignment: 
+            list: false
+          participants: 
+            add_student: false
+            change_handle: true
+            edit_team_members: false
+            list_courses: false
+            list_assignments: false
+            list_students: false
+          site_controllers: 
+            list: false
+          statistics: 
+            list_surveys: false
+          admin: 
+            list_instructors: false
+            list_super_administrators: false
+            list_administrators: false
+          review_files: 
+            show_code_file: true
+            show_code_file_diff: true
+            submit_comment: true
+            submit_review_file: true
+            show_all_submitted_files: true
+          impersonate: 
+            impersonate: true
+            start: false
+          questionnaire: 
+            list: false
+            save_questionnaire: false
+            create_questionnaire: false
+            copy_questionnaire: false
+            edit_questionnaire: false
+          suggestion: 
+            new: true
+            create: true
+          controller_actions: 
+            list: false
+          sign_up_sheet: 
+            team_details: true
+            signup_topics: true
+            delete_signup: true
+            signup: true
+          survey_response: 
+            submit: true
+            create: true
+          users: 
+            keys: true
+            list: false
+          permissions: 
+            list: false
+          leaderboard: 
+            index: true
+          review_mapping: 
+            assign_metareviewer_dynamically: true
+            release_reservation: true
+            list: false
+            add_dynamic_reviewer: true
+            assign_reviewer_dynamically: true
+            show_available_submissions: true
+          team: 
+            list: false
+            list_assignments: false
+          roles: 
+            list: false
+          grades: 
+            view_my_scores: true
+          survey_deployment: 
+            list: false
+          system_settings: 
+            list: false
+          content_pages: 
+            list: false
+            view: true
+            view_default: true
+        controllers: 
+          import_file: false
+          teams_users: false
+          course: false
+          menu_items: false
+          delete_object: false
+          response: true
+          tree_display: false
+          auth: false
+          course_evaluation: true
+          profile: true
+          student_task: true
+          institution: false
+          participants: false
+          assignment: false
+          site_controllers: false
+          statistics: false
+          markup_styles: false
+          admin: false
+          roles_permissions: false
+          advertise_for_partners: true
+          review_files: true
+          invitation: true
+          student_team: true
+          impersonate: false
+          questionnaire: false
+          suggestion: false
+          controller_actions: false
+          sign_up_sheet: false
+          export_file: false
+          eula: true
+          join_team_requests: true
+          student_review: true
+          survey: false
+          survey_response: true
+          users: true
+          permissions: false
+          leaderboard: true
+          password_retrieval: true
+          review_mapping: false
+          team: false
+          reports: true
+          roles: false
+          publishing: true
+          submitted_content: true
+          survey_deployment: false
+          participant_choices: false
+          grades: false
+          system_settings: false
+          content_pages: false
+        pages: 
+          admin: false
+          site_admin: false
+          notfound: true
+          contact_us: true
+          denied: true
+          credits: true
+          expired: true
+          home: true
+        permission_ids: 
+        - 8
+        - 4
+        - 3
+        role_id: 1
+        role_ids: 
+        - 1
+        updated_at: 2012-06-30 23:47:40 Z
+
     default_page_id: 
+    updated_at: 2012-06-30 23:47:40
     id: "1"
-    description: Members of the public who are not logged in.
     parent_id: 
-    created_at: 2006-06-23 21:03:49
+    description: ""
+  attributes_cache: {}
+
 - !ruby/object:Role 
   attributes: 
-    name: Member
-    updated_at: 2006-10-29 22:22:07
-    cache: 
+    name: Instructor
+    created_at: 2012-06-30 17:25:34
+    cache: |
+      --- 
+      :menu: !ruby/object:Menu 
+        by_id: 
+          38: &id006 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 52
+            id: 38
+            label: Global survey
+            name: manage/questionnaires/global survey
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_global_survey
+          27: &id004 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 36
+            id: 27
+            label: Profile
+            name: profile
+            parent: 
+            parent_id: 
+            site_controller_id: 26
+            url: /profile/edit
+          33: &id014 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 46
+            id: 33
+            label: Statistical Test
+            name: Statistical Test
+            parent: 
+            parent_id: 32
+            site_controller_id: 37
+            url: /statistics/list_surveys
+          39: &id011 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 53
+            id: 39
+            label: Surveys
+            name: manage/questionnaires/surveys
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_surveys
+          45: &id007 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 61
+            id: 45
+            label: Metareview rubrics
+            name: manage/questionnaires/metareview rubrics
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_metareview_rubrics
+          34: &id013 !ruby/object:Menu::Node 
+            children: 
+            - 13
+            - 35
+            - 41
+            - 42
+            - 30
+            content_page_id: 
+            controller_action_id: 48
+            id: 34
+            label: Manage...
+            name: manage instructor content
+            parent: 
+            parent_id: 
+            site_controller_id: 38
+            url: /tree_display/drill
+          1: &id020 !ruby/object:Menu::Node 
+            children: 
+            - 47
+            content_page_id: 1
+            controller_action_id: 
+            id: 1
+            label: Home
+            name: home
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /home
+          40: &id001 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 53
+            id: 40
+            label: Course evaluations
+            name: manage/questionnaires/course evaluations
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_surveys
+          46: &id018 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 62
+            id: 46
+            label: Teammate review rubrics
+            name: manage/questionnaires/teammate review rubrics
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_teammatereview_rubrics
+          35: &id012 !ruby/object:Menu::Node 
+            children: 
+            - 36
+            - 45
+            - 46
+            - 37
+            - 38
+            - 39
+            - 40
+            content_page_id: 
+            controller_action_id: 49
+            id: 35
+            label: Questionnaires
+            name: manage/questionnaires
+            parent: 
+            parent_id: 34
+            site_controller_id: 38
+            url: /tree_display/goto_questionnaires
+          13: &id003 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 15
+            id: 13
+            label: Users
+            name: manage/users
+            parent: 
+            parent_id: 34
+            site_controller_id: 10
+            url: /users/list
+          2: &id016 !ruby/object:Menu::Node 
+            children: 
+            - 14
+            content_page_id: 6
+            controller_action_id: 
+            id: 2
+            label: Contact Us
+            name: contact_us
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /contact_us
+          30: &id009 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 42
+            id: 30
+            label: Impersonate User
+            name: impersonate
+            parent: 
+            parent_id: 34
+            site_controller_id: 30
+            url: /impersonate/start
+          41: &id010 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 55
+            id: 41
+            label: Courses
+            name: manage/courses
+            parent: 
+            parent_id: 34
+            site_controller_id: 38
+            url: /tree_display/goto_courses
+          36: &id002 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 51
+            id: 36
+            label: Review rubrics
+            name: manage/questionnaires/review rubrics
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_review_rubrics
+          14: &id017 !ruby/object:Menu::Node 
+            content_page_id: 10
+            controller_action_id: 
+            id: 14
+            label: Credits &amp; Licence
+            name: credits
+            parent: 
+            parent_id: 2
+            site_controller_id: 
+            url: /credits
+          47: &id019 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 67
+            id: 47
+            label: Leaderboard
+            name: leaderboard
+            parent: 
+            parent_id: 1
+            site_controller_id: 53
+            url: /leaderboard/index
+          42: &id021 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 56
+            id: 42
+            label: Assignments
+            name: manage/assignments
+            parent: 
+            parent_id: 34
+            site_controller_id: 38
+            url: /tree_display/goto_assignments
+          37: &id008 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 50
+            id: 37
+            label: Author feedbacks
+            name: manage/questionnaires/author feedbacks
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_author_feedbacks
+          26: &id005 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 33
+            id: 26
+            label: Assignments
+            name: student_task
+            parent: 
+            parent_id: 
+            site_controller_id: 23
+            url: /student_task/list
+          43: &id015 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 15
+            id: 43
+            label: Show...
+            name: show
+            parent: 
+            parent_id: 3
+            site_controller_id: 10
+            url: /users/list
+          32: &id022 !ruby/object:Menu::Node 
+            children: 
+            - 33
+            content_page_id: 
+            controller_action_id: 45
+            id: 32
+            label: Survey Deployments
+            name: Survey Deployments
+            parent: 
+            parent_id: 
+            site_controller_id: 36
+            url: /survey_deployment/list
+        by_name: 
+          manage/questionnaires/course evaluations: *id001
+          manage/questionnaires/review rubrics: *id002
+          manage/users: *id003
+          profile: *id004
+          student_task: *id005
+          manage/questionnaires/global survey: *id006
+          manage/questionnaires/metareview rubrics: *id007
+          manage/questionnaires/author feedbacks: *id008
+          impersonate: *id009
+          manage/courses: *id010
+          manage/questionnaires/surveys: *id011
+          manage/questionnaires: *id012
+          manage instructor content: *id013
+          Statistical Test: *id014
+          show: *id015
+          contact_us: *id016
+          credits: *id017
+          manage/questionnaires/teammate review rubrics: *id018
+          leaderboard: *id019
+          home: *id020
+          manage/assignments: *id021
+          Survey Deployments: *id022
+        crumbs: 
+        - 1
+        root: &id023 !ruby/object:Menu::Node 
+          children: 
+          - 1
+          - 34
+          - 32
+          - 26
+          - 27
+          - 2
+          parent: 
+        selected: 
+          1: *id020
+        vector: 
+        - *id023
+        - *id020
+      :credentials: !ruby/object:Credentials 
+        actions: 
+          teams_users: 
+            list: true
+          course: 
+            list_folders: true
+          menu_items: 
+            list: false
+            link: true
+          tree_display: 
+            goto_author_feedbacks: true
+            list: true
+            goto_metareview_rubrics: true
+            goto_assignments: true
+            goto_questionnaires: true
+            goto_course_evaluations: true
+            goto_teammate_reviews: true
+            goto_global_survey: true
+            goto_review_rubrics: true
+            drill: true
+            goto_courses: true
+            goto_teammatereview_rubrics: true
+            goto_surveys: true
+          auth: 
+            logout: true
+            login: true
+            login_failed: true
+          profile: 
+            edit: true
+          student_task: 
+            list: true
+          institution: 
+            list: false
+          assignment: 
+            list: true
+          participants: 
+            add_student: true
+            change_handle: true
+            edit_team_members: true
+            list_courses: true
+            list_assignments: true
+            list_students: true
+          site_controllers: 
+            list: false
+          statistics: 
+            list_surveys: true
+          admin: 
+            list_instructors: false
+            list_super_administrators: false
+            list_administrators: false
+          review_files: 
+            show_code_file: true
+            show_code_file_diff: true
+            submit_comment: true
+            submit_review_file: true
+            show_all_submitted_files: true
+          impersonate: 
+            impersonate: true
+            start: true
+          questionnaire: 
+            list: true
+            save_questionnaire: true
+            create_questionnaire: true
+            copy_questionnaire: true
+            edit_questionnaire: true
+          suggestion: 
+            new: true
+            create: true
+          controller_actions: 
+            list: false
+          sign_up_sheet: 
+            team_details: true
+            signup_topics: true
+            delete_signup: true
+            signup: true
+          survey_response: 
+            submit: true
+            create: true
+          users: 
+            keys: true
+            list: true
+          permissions: 
+            list: false
+          leaderboard: 
+            index: true
+          review_mapping: 
+            assign_metareviewer_dynamically: true
+            release_reservation: true
+            list: true
+            add_dynamic_reviewer: true
+            assign_reviewer_dynamically: true
+            show_available_submissions: true
+          team: 
+            list: true
+            list_assignments: true
+          roles: 
+            list: false
+          grades: 
+            view_my_scores: true
+          survey_deployment: 
+            list: true
+          system_settings: 
+            list: false
+          content_pages: 
+            list: false
+            view: true
+            view_default: true
+        controllers: 
+          import_file: true
+          teams_users: true
+          course: true
+          menu_items: false
+          delete_object: true
+          response: true
+          tree_display: true
+          auth: false
+          course_evaluation: true
+          profile: true
+          student_task: true
+          institution: false
+          participants: true
+          assignment: true
+          site_controllers: false
+          statistics: true
+          markup_styles: false
+          admin: false
+          roles_permissions: false
+          advertise_for_partners: true
+          review_files: true
+          invitation: true
+          student_team: true
+          impersonate: true
+          questionnaire: true
+          suggestion: true
+          controller_actions: false
+          sign_up_sheet: true
+          export_file: true
+          eula: true
+          join_team_requests: true
+          student_review: true
+          survey: true
+          survey_response: true
+          users: true
+          permissions: false
+          leaderboard: true
+          password_retrieval: true
+          review_mapping: true
+          team: true
+          reports: true
+          roles: false
+          publishing: true
+          submitted_content: true
+          survey_deployment: true
+          participant_choices: true
+          grades: true
+          system_settings: false
+          content_pages: false
+        pages: 
+          admin: true
+          site_admin: false
+          notfound: true
+          contact_us: true
+          denied: true
+          credits: true
+          expired: true
+          home: true
+        permission_ids: 
+        - 7
+        - 8
+        - 4
+        - 3
+        role_id: 2
+        role_ids: 
+        - 2
+        - 5
+        - 1
+        updated_at: 2012-06-30 23:47:41 Z
+
     default_page_id: 
+    updated_at: 2012-06-30 23:47:41
     id: "2"
+    parent_id: "5"
     description: ""
-    parent_id: "1"
-    created_at: 2006-06-23 21:03:50
+  attributes_cache: {}
+
 - !ruby/object:Role 
   attributes: 
     name: Administrator
-    updated_at: 2006-10-29 22:22:07
-    cache: 
-    default_page_id: "8"
+    created_at: 2012-06-30 17:25:34
+    cache: |
+      --- 
+      :menu: !ruby/object:Menu 
+        by_id: 
+          38: &id006 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 52
+            id: 38
+            label: Global survey
+            name: manage/questionnaires/global survey
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_global_survey
+          27: &id004 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 36
+            id: 27
+            label: Profile
+            name: profile
+            parent: 
+            parent_id: 
+            site_controller_id: 26
+            url: /profile/edit
+          33: &id014 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 46
+            id: 33
+            label: Statistical Test
+            name: Statistical Test
+            parent: 
+            parent_id: 32
+            site_controller_id: 37
+            url: /statistics/list_surveys
+          39: &id011 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 53
+            id: 39
+            label: Surveys
+            name: manage/questionnaires/surveys
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_surveys
+          45: &id007 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 61
+            id: 45
+            label: Metareview rubrics
+            name: manage/questionnaires/metareview rubrics
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_metareview_rubrics
+          34: &id013 !ruby/object:Menu::Node 
+            children: 
+            - 13
+            - 35
+            - 41
+            - 42
+            - 30
+            content_page_id: 
+            controller_action_id: 48
+            id: 34
+            label: Manage...
+            name: manage instructor content
+            parent: 
+            parent_id: 
+            site_controller_id: 38
+            url: /tree_display/drill
+          1: &id020 !ruby/object:Menu::Node 
+            children: 
+            - 47
+            content_page_id: 1
+            controller_action_id: 
+            id: 1
+            label: Home
+            name: home
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /home
+          40: &id001 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 53
+            id: 40
+            label: Course evaluations
+            name: manage/questionnaires/course evaluations
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_surveys
+          46: &id018 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 62
+            id: 46
+            label: Teammate review rubrics
+            name: manage/questionnaires/teammate review rubrics
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_teammatereview_rubrics
+          35: &id012 !ruby/object:Menu::Node 
+            children: 
+            - 36
+            - 45
+            - 46
+            - 37
+            - 38
+            - 39
+            - 40
+            content_page_id: 
+            controller_action_id: 49
+            id: 35
+            label: Questionnaires
+            name: manage/questionnaires
+            parent: 
+            parent_id: 34
+            site_controller_id: 38
+            url: /tree_display/goto_questionnaires
+          13: &id003 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 15
+            id: 13
+            label: Users
+            name: manage/users
+            parent: 
+            parent_id: 34
+            site_controller_id: 10
+            url: /users/list
+          2: &id016 !ruby/object:Menu::Node 
+            children: 
+            - 14
+            content_page_id: 6
+            controller_action_id: 
+            id: 2
+            label: Contact Us
+            name: contact_us
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /contact_us
+          30: &id009 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 42
+            id: 30
+            label: Impersonate User
+            name: impersonate
+            parent: 
+            parent_id: 34
+            site_controller_id: 30
+            url: /impersonate/start
+          41: &id010 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 55
+            id: 41
+            label: Courses
+            name: manage/courses
+            parent: 
+            parent_id: 34
+            site_controller_id: 38
+            url: /tree_display/goto_courses
+          36: &id002 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 51
+            id: 36
+            label: Review rubrics
+            name: manage/questionnaires/review rubrics
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_review_rubrics
+          14: &id017 !ruby/object:Menu::Node 
+            content_page_id: 10
+            controller_action_id: 
+            id: 14
+            label: Credits &amp; Licence
+            name: credits
+            parent: 
+            parent_id: 2
+            site_controller_id: 
+            url: /credits
+          47: &id019 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 67
+            id: 47
+            label: Leaderboard
+            name: leaderboard
+            parent: 
+            parent_id: 1
+            site_controller_id: 53
+            url: /leaderboard/index
+          42: &id021 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 56
+            id: 42
+            label: Assignments
+            name: manage/assignments
+            parent: 
+            parent_id: 34
+            site_controller_id: 38
+            url: /tree_display/goto_assignments
+          37: &id008 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 50
+            id: 37
+            label: Author feedbacks
+            name: manage/questionnaires/author feedbacks
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_author_feedbacks
+          26: &id005 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 33
+            id: 26
+            label: Assignments
+            name: student_task
+            parent: 
+            parent_id: 
+            site_controller_id: 23
+            url: /student_task/list
+          43: &id015 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 15
+            id: 43
+            label: Show...
+            name: show
+            parent: 
+            parent_id: 3
+            site_controller_id: 10
+            url: /users/list
+          32: &id022 !ruby/object:Menu::Node 
+            children: 
+            - 33
+            content_page_id: 
+            controller_action_id: 45
+            id: 32
+            label: Survey Deployments
+            name: Survey Deployments
+            parent: 
+            parent_id: 
+            site_controller_id: 36
+            url: /survey_deployment/list
+        by_name: 
+          manage/questionnaires/course evaluations: *id001
+          manage/questionnaires/review rubrics: *id002
+          manage/users: *id003
+          profile: *id004
+          student_task: *id005
+          manage/questionnaires/global survey: *id006
+          manage/questionnaires/metareview rubrics: *id007
+          manage/questionnaires/author feedbacks: *id008
+          impersonate: *id009
+          manage/courses: *id010
+          manage/questionnaires/surveys: *id011
+          manage/questionnaires: *id012
+          manage instructor content: *id013
+          Statistical Test: *id014
+          show: *id015
+          contact_us: *id016
+          credits: *id017
+          manage/questionnaires/teammate review rubrics: *id018
+          leaderboard: *id019
+          home: *id020
+          manage/assignments: *id021
+          Survey Deployments: *id022
+        crumbs: 
+        - 1
+        root: &id023 !ruby/object:Menu::Node 
+          children: 
+          - 1
+          - 34
+          - 32
+          - 26
+          - 27
+          - 2
+          parent: 
+        selected: 
+          1: *id020
+        vector: 
+        - *id023
+        - *id020
+      :credentials: !ruby/object:Credentials 
+        actions: 
+          teams_users: 
+            list: true
+          course: 
+            list_folders: true
+          menu_items: 
+            list: false
+            link: true
+          tree_display: 
+            goto_author_feedbacks: true
+            list: true
+            goto_metareview_rubrics: true
+            goto_assignments: true
+            goto_questionnaires: true
+            goto_course_evaluations: true
+            goto_teammate_reviews: true
+            goto_global_survey: true
+            goto_review_rubrics: true
+            drill: true
+            goto_courses: true
+            goto_teammatereview_rubrics: true
+            goto_surveys: true
+          auth: 
+            logout: true
+            login: true
+            login_failed: true
+          profile: 
+            edit: true
+          student_task: 
+            list: true
+          institution: 
+            list: false
+          assignment: 
+            list: true
+          participants: 
+            add_student: true
+            change_handle: true
+            edit_team_members: true
+            list_courses: true
+            list_assignments: true
+            list_students: true
+          site_controllers: 
+            list: false
+          statistics: 
+            list_surveys: true
+          admin: 
+            list_instructors: false
+            list_super_administrators: false
+            list_administrators: false
+          review_files: 
+            show_code_file: true
+            show_code_file_diff: true
+            submit_comment: true
+            submit_review_file: true
+            show_all_submitted_files: true
+          impersonate: 
+            impersonate: true
+            start: true
+          questionnaire: 
+            list: true
+            save_questionnaire: true
+            create_questionnaire: true
+            copy_questionnaire: true
+            edit_questionnaire: true
+          suggestion: 
+            new: true
+            create: true
+          controller_actions: 
+            list: false
+          sign_up_sheet: 
+            team_details: true
+            signup_topics: true
+            delete_signup: true
+            signup: true
+          survey_response: 
+            submit: true
+            create: true
+          users: 
+            keys: true
+            list: true
+          permissions: 
+            list: false
+          leaderboard: 
+            index: true
+          review_mapping: 
+            assign_metareviewer_dynamically: true
+            release_reservation: true
+            list: true
+            add_dynamic_reviewer: true
+            assign_reviewer_dynamically: true
+            show_available_submissions: true
+          team: 
+            list: true
+            list_assignments: true
+          roles: 
+            list: false
+          grades: 
+            view_my_scores: true
+          survey_deployment: 
+            list: true
+          system_settings: 
+            list: false
+          content_pages: 
+            list: false
+            view: true
+            view_default: true
+        controllers: 
+          import_file: true
+          teams_users: true
+          course: true
+          menu_items: false
+          delete_object: true
+          response: true
+          tree_display: true
+          auth: false
+          course_evaluation: true
+          profile: true
+          student_task: true
+          institution: false
+          participants: true
+          assignment: true
+          site_controllers: false
+          statistics: true
+          markup_styles: false
+          admin: false
+          roles_permissions: false
+          advertise_for_partners: true
+          review_files: true
+          invitation: true
+          student_team: true
+          impersonate: true
+          questionnaire: true
+          suggestion: true
+          controller_actions: false
+          sign_up_sheet: true
+          export_file: true
+          eula: true
+          join_team_requests: true
+          student_review: true
+          survey: true
+          survey_response: true
+          users: true
+          permissions: false
+          leaderboard: true
+          password_retrieval: true
+          review_mapping: true
+          team: true
+          reports: true
+          roles: false
+          publishing: true
+          submitted_content: true
+          survey_deployment: true
+          participant_choices: true
+          grades: true
+          system_settings: false
+          content_pages: false
+        pages: 
+          admin: true
+          site_admin: false
+          notfound: true
+          contact_us: true
+          denied: true
+          credits: true
+          expired: true
+          home: true
+        permission_ids: 
+        - 7
+        - 7
+        - 8
+        - 4
+        - 3
+        role_id: 3
+        role_ids: 
+        - 3
+        - 2
+        - 5
+        - 1
+        updated_at: 2012-06-30 23:47:42 Z
+
+    default_page_id: 
+    updated_at: 2012-06-30 23:47:42
     id: "3"
-    description: ""
     parent_id: "2"
-    created_at: 2006-06-23 21:03:48
+    description: ""
+  attributes_cache: {}
+
+- !ruby/object:Role 
+  attributes: 
+    name: Super-Administrator
+    created_at: 2012-06-30 17:25:34
+    cache: |
+      --- 
+      :menu: !ruby/object:Menu 
+        by_id: 
+          16: &id005 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 17
+            id: 16
+            label: Administrators
+            name: show/administrators
+            parent: 
+            parent_id: 43
+            site_controller_id: 12
+            url: /admin/list_administrators
+          38: &id011 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 52
+            id: 38
+            label: Global survey
+            name: manage/questionnaires/global survey
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_global_survey
+          5: &id023 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 4
+            id: 5
+            label: Permissions
+            name: setup/permissions
+            parent: 
+            parent_id: 9
+            site_controller_id: 6
+            url: /permissions/list
+          27: &id007 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 36
+            id: 27
+            label: Profile
+            name: profile
+            parent: 
+            parent_id: 
+            site_controller_id: 26
+            url: /profile/edit
+          22: &id018 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 32
+            id: 22
+            label: Institutions
+            name: show/institutions
+            parent: 
+            parent_id: 43
+            site_controller_id: 22
+            url: /institution/list
+          33: &id022 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 46
+            id: 33
+            label: Statistical Test
+            name: Statistical Test
+            parent: 
+            parent_id: 32
+            site_controller_id: 37
+            url: /statistics/list_surveys
+          11: &id002 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 11
+            id: 11
+            label: Menu Editor
+            name: setup/menus
+            parent: 
+            parent_id: 9
+            site_controller_id: 5
+            url: /menu_items/list
+          17: &id009 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 18
+            id: 17
+            label: Super-Administrators
+            name: show/super-administrators
+            parent: 
+            parent_id: 43
+            site_controller_id: 12
+            url: /admin/list_super_administrators
+          39: &id019 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 53
+            id: 39
+            label: Surveys
+            name: manage/questionnaires/surveys
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_surveys
+          6: &id006 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 3
+            id: 6
+            label: Roles
+            name: setup/roles
+            parent: 
+            parent_id: 9
+            site_controller_id: 7
+            url: /roles/list
+          45: &id012 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 61
+            id: 45
+            label: Metareview rubrics
+            name: manage/questionnaires/metareview rubrics
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_metareview_rubrics
+          12: &id010 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 12
+            id: 12
+            label: System Settings
+            name: setup/system_settings
+            parent: 
+            parent_id: 9
+            site_controller_id: 9
+            url: /system_settings/list
+          34: &id021 !ruby/object:Menu::Node 
+            children: 
+            - 13
+            - 35
+            - 41
+            - 42
+            - 30
+            content_page_id: 
+            controller_action_id: 48
+            id: 34
+            label: Manage...
+            name: manage instructor content
+            parent: 
+            parent_id: 
+            site_controller_id: 38
+            url: /tree_display/drill
+          1: &id032 !ruby/object:Menu::Node 
+            children: 
+            - 47
+            content_page_id: 1
+            controller_action_id: 
+            id: 1
+            label: Home
+            name: home
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /home
+          40: &id001 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 53
+            id: 40
+            label: Course evaluations
+            name: manage/questionnaires/course evaluations
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_surveys
+          7: &id029 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 8
+            id: 7
+            label: Content Pages
+            name: setup/pages
+            parent: 
+            parent_id: 9
+            site_controller_id: 1
+            url: /content_pages/list
+          46: &id028 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 62
+            id: 46
+            label: Teammate review rubrics
+            name: manage/questionnaires/teammate review rubrics
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_teammatereview_rubrics
+          35: &id020 !ruby/object:Menu::Node 
+            children: 
+            - 36
+            - 45
+            - 46
+            - 37
+            - 38
+            - 39
+            - 40
+            content_page_id: 
+            controller_action_id: 49
+            id: 35
+            label: Questionnaires
+            name: manage/questionnaires
+            parent: 
+            parent_id: 34
+            site_controller_id: 38
+            url: /tree_display/goto_questionnaires
+          13: &id004 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 15
+            id: 13
+            label: Users
+            name: manage/users
+            parent: 
+            parent_id: 34
+            site_controller_id: 10
+            url: /users/list
+          2: &id026 !ruby/object:Menu::Node 
+            children: 
+            - 14
+            content_page_id: 6
+            controller_action_id: 
+            id: 2
+            label: Contact Us
+            name: contact_us
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /contact_us
+          30: &id015 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 42
+            id: 30
+            label: Impersonate User
+            name: impersonate
+            parent: 
+            parent_id: 34
+            site_controller_id: 30
+            url: /impersonate/start
+          41: &id016 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 55
+            id: 41
+            label: Courses
+            name: manage/courses
+            parent: 
+            parent_id: 34
+            site_controller_id: 38
+            url: /tree_display/goto_courses
+          8: &id030 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 9
+            id: 8
+            label: Controllers / Actions
+            name: setup/controllers
+            parent: 
+            parent_id: 9
+            site_controller_id: 8
+            url: /site_controllers/list
+          36: &id003 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 51
+            id: 36
+            label: Review rubrics
+            name: manage/questionnaires/review rubrics
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_review_rubrics
+          14: &id027 !ruby/object:Menu::Node 
+            content_page_id: 10
+            controller_action_id: 
+            id: 14
+            label: Credits &amp; Licence
+            name: credits
+            parent: 
+            parent_id: 2
+            site_controller_id: 
+            url: /credits
+          47: &id031 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 67
+            id: 47
+            label: Leaderboard
+            name: leaderboard
+            parent: 
+            parent_id: 1
+            site_controller_id: 53
+            url: /leaderboard/index
+          3: &id013 !ruby/object:Menu::Node 
+            children: 
+            - 9
+            - 43
+            content_page_id: 8
+            controller_action_id: 
+            id: 3
+            label: Administration
+            name: admin
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /site_admin
+          42: &id033 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 56
+            id: 42
+            label: Assignments
+            name: manage/assignments
+            parent: 
+            parent_id: 34
+            site_controller_id: 38
+            url: /tree_display/goto_assignments
+          9: &id025 !ruby/object:Menu::Node 
+            children: 
+            - 6
+            - 5
+            - 8
+            - 7
+            - 11
+            - 12
+            content_page_id: 8
+            controller_action_id: 
+            id: 9
+            label: Setup
+            name: setup
+            parent: 
+            parent_id: 3
+            site_controller_id: 
+            url: /site_admin
+          15: &id017 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 16
+            id: 15
+            label: Instructors
+            name: show/instructors
+            parent: 
+            parent_id: 43
+            site_controller_id: 12
+            url: /admin/list_instructors
+          37: &id014 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 50
+            id: 37
+            label: Author feedbacks
+            name: manage/questionnaires/author feedbacks
+            parent: 
+            parent_id: 35
+            site_controller_id: 38
+            url: /tree_display/goto_author_feedbacks
+          26: &id008 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 33
+            id: 26
+            label: Assignments
+            name: student_task
+            parent: 
+            parent_id: 
+            site_controller_id: 23
+            url: /student_task/list
+          43: &id024 !ruby/object:Menu::Node 
+            children: 
+            - 22
+            - 17
+            - 16
+            - 15
+            content_page_id: 
+            controller_action_id: 15
+            id: 43
+            label: Show...
+            name: show
+            parent: 
+            parent_id: 3
+            site_controller_id: 10
+            url: /users/list
+          32: &id034 !ruby/object:Menu::Node 
+            children: 
+            - 33
+            content_page_id: 
+            controller_action_id: 45
+            id: 32
+            label: Survey Deployments
+            name: Survey Deployments
+            parent: 
+            parent_id: 
+            site_controller_id: 36
+            url: /survey_deployment/list
+        by_name: 
+          manage/questionnaires/course evaluations: *id001
+          setup/menus: *id002
+          manage/questionnaires/review rubrics: *id003
+          manage/users: *id004
+          show/administrators: *id005
+          setup/roles: *id006
+          profile: *id007
+          student_task: *id008
+          show/super-administrators: *id009
+          setup/system_settings: *id010
+          manage/questionnaires/global survey: *id011
+          manage/questionnaires/metareview rubrics: *id012
+          admin: *id013
+          manage/questionnaires/author feedbacks: *id014
+          impersonate: *id015
+          manage/courses: *id016
+          show/instructors: *id017
+          show/institutions: *id018
+          manage/questionnaires/surveys: *id019
+          manage/questionnaires: *id020
+          manage instructor content: *id021
+          Statistical Test: *id022
+          setup/permissions: *id023
+          show: *id024
+          setup: *id025
+          contact_us: *id026
+          credits: *id027
+          manage/questionnaires/teammate review rubrics: *id028
+          setup/pages: *id029
+          setup/controllers: *id030
+          leaderboard: *id031
+          home: *id032
+          manage/assignments: *id033
+          Survey Deployments: *id034
+        crumbs: 
+        - 1
+        root: &id035 !ruby/object:Menu::Node 
+          children: 
+          - 1
+          - 3
+          - 34
+          - 32
+          - 26
+          - 27
+          - 2
+          parent: 
+        selected: 
+          1: *id032
+        vector: 
+        - *id035
+        - *id032
+      :credentials: !ruby/object:Credentials 
+        actions: 
+          teams_users: 
+            list: true
+          course: 
+            list_folders: true
+          menu_items: 
+            list: true
+            link: true
+          tree_display: 
+            goto_author_feedbacks: true
+            list: true
+            goto_metareview_rubrics: true
+            goto_assignments: true
+            goto_questionnaires: true
+            goto_course_evaluations: true
+            goto_teammate_reviews: true
+            goto_global_survey: true
+            goto_review_rubrics: true
+            drill: true
+            goto_courses: true
+            goto_teammatereview_rubrics: true
+            goto_surveys: true
+          auth: 
+            logout: true
+            login: true
+            login_failed: true
+          profile: 
+            edit: true
+          student_task: 
+            list: true
+          institution: 
+            list: true
+          assignment: 
+            list: true
+          participants: 
+            add_student: true
+            change_handle: true
+            edit_team_members: true
+            list_courses: true
+            list_assignments: true
+            list_students: true
+          site_controllers: 
+            list: true
+          statistics: 
+            list_surveys: true
+          admin: 
+            list_instructors: true
+            list_super_administrators: true
+            list_administrators: true
+          review_files: 
+            show_code_file: true
+            show_code_file_diff: true
+            submit_comment: true
+            submit_review_file: true
+            show_all_submitted_files: true
+          impersonate: 
+            impersonate: true
+            start: true
+          questionnaire: 
+            list: true
+            save_questionnaire: true
+            create_questionnaire: true
+            copy_questionnaire: true
+            edit_questionnaire: true
+          suggestion: 
+            new: true
+            create: true
+          controller_actions: 
+            list: true
+          sign_up_sheet: 
+            team_details: true
+            signup_topics: true
+            delete_signup: true
+            signup: true
+          survey_response: 
+            submit: true
+            create: true
+          users: 
+            keys: true
+            list: true
+          permissions: 
+            list: true
+          leaderboard: 
+            index: true
+          review_mapping: 
+            assign_metareviewer_dynamically: true
+            release_reservation: true
+            list: true
+            add_dynamic_reviewer: true
+            assign_reviewer_dynamically: true
+            show_available_submissions: true
+          team: 
+            list: true
+            list_assignments: true
+          roles: 
+            list: true
+          grades: 
+            view_my_scores: true
+          survey_deployment: 
+            list: true
+          system_settings: 
+            list: true
+          content_pages: 
+            list: true
+            view: true
+            view_default: true
+        controllers: 
+          import_file: true
+          teams_users: true
+          course: true
+          menu_items: true
+          delete_object: true
+          response: true
+          tree_display: true
+          auth: true
+          course_evaluation: true
+          profile: true
+          student_task: true
+          institution: true
+          participants: true
+          assignment: true
+          site_controllers: true
+          statistics: true
+          markup_styles: true
+          admin: true
+          roles_permissions: true
+          advertise_for_partners: true
+          review_files: true
+          invitation: true
+          student_team: true
+          impersonate: true
+          questionnaire: true
+          suggestion: true
+          controller_actions: true
+          sign_up_sheet: true
+          export_file: true
+          eula: true
+          join_team_requests: true
+          student_review: true
+          survey: true
+          survey_response: true
+          users: true
+          permissions: true
+          leaderboard: true
+          password_retrieval: true
+          review_mapping: true
+          team: true
+          reports: true
+          roles: true
+          publishing: true
+          submitted_content: true
+          survey_deployment: true
+          participant_choices: true
+          grades: true
+          system_settings: true
+          content_pages: true
+        pages: 
+          admin: true
+          site_admin: true
+          notfound: true
+          contact_us: true
+          denied: true
+          credits: true
+          expired: true
+          home: true
+        permission_ids: 
+        - 7
+        - 7
+        - 7
+        - 1
+        - 9
+        - 6
+        - 8
+        - 4
+        - 3
+        role_id: 4
+        role_ids: 
+        - 4
+        - 3
+        - 2
+        - 5
+        - 1
+        updated_at: 2012-06-30 23:47:42 Z
+
+    default_page_id: 
+    updated_at: 2012-06-30 23:47:43
+    id: "4"
+    parent_id: "3"
+    description: ""
+  attributes_cache: {}
+
+- !ruby/object:Role 
+  attributes: 
+    name: Teaching Assistant
+    created_at: 2012-06-30 17:26:17
+    cache: |
+      --- 
+      :menu: !ruby/object:Menu 
+        by_id: 
+          27: &id001 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 36
+            id: 27
+            label: Profile
+            name: profile
+            parent: 
+            parent_id: 
+            site_controller_id: 26
+            url: /profile/edit
+          1: &id006 !ruby/object:Menu::Node 
+            children: 
+            - 47
+            content_page_id: 1
+            controller_action_id: 
+            id: 1
+            label: Home
+            name: home
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /home
+          2: &id003 !ruby/object:Menu::Node 
+            children: 
+            - 14
+            content_page_id: 6
+            controller_action_id: 
+            id: 2
+            label: Contact Us
+            name: contact_us
+            parent: 
+            parent_id: 
+            site_controller_id: 
+            url: /contact_us
+          14: &id004 !ruby/object:Menu::Node 
+            content_page_id: 10
+            controller_action_id: 
+            id: 14
+            label: Credits &amp; Licence
+            name: credits
+            parent: 
+            parent_id: 2
+            site_controller_id: 
+            url: /credits
+          47: &id005 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 67
+            id: 47
+            label: Leaderboard
+            name: leaderboard
+            parent: 
+            parent_id: 1
+            site_controller_id: 53
+            url: /leaderboard/index
+          26: &id002 !ruby/object:Menu::Node 
+            content_page_id: 
+            controller_action_id: 33
+            id: 26
+            label: Assignments
+            name: student_task
+            parent: 
+            parent_id: 
+            site_controller_id: 23
+            url: /student_task/list
+        by_name: 
+          profile: *id001
+          student_task: *id002
+          contact_us: *id003
+          credits: *id004
+          leaderboard: *id005
+          home: *id006
+        crumbs: 
+        - 1
+        root: &id007 !ruby/object:Menu::Node 
+          children: 
+          - 1
+          - 26
+          - 27
+          - 2
+          parent: 
+        selected: 
+          1: *id006
+        vector: 
+        - *id007
+        - *id006
+      :credentials: !ruby/object:Credentials 
+        actions: 
+          teams_users: 
+            list: false
+          course: 
+            list_folders: false
+          menu_items: 
+            list: false
+            link: true
+          tree_display: 
+            goto_author_feedbacks: false
+            list: false
+            goto_metareview_rubrics: false
+            goto_assignments: false
+            goto_questionnaires: false
+            goto_course_evaluations: false
+            goto_teammate_reviews: false
+            goto_global_survey: false
+            goto_review_rubrics: false
+            drill: false
+            goto_courses: false
+            goto_teammatereview_rubrics: false
+            goto_surveys: false
+          auth: 
+            logout: true
+            login: true
+            login_failed: true
+          profile: 
+            edit: true
+          student_task: 
+            list: true
+          institution: 
+            list: false
+          assignment: 
+            list: false
+          participants: 
+            add_student: false
+            change_handle: true
+            edit_team_members: false
+            list_courses: false
+            list_assignments: false
+            list_students: false
+          site_controllers: 
+            list: false
+          statistics: 
+            list_surveys: false
+          admin: 
+            list_instructors: false
+            list_super_administrators: false
+            list_administrators: false
+          review_files: 
+            show_code_file: true
+            show_code_file_diff: true
+            submit_comment: true
+            submit_review_file: true
+            show_all_submitted_files: true
+          impersonate: 
+            impersonate: true
+            start: false
+          questionnaire: 
+            list: false
+            save_questionnaire: false
+            create_questionnaire: false
+            copy_questionnaire: false
+            edit_questionnaire: false
+          suggestion: 
+            new: true
+            create: true
+          controller_actions: 
+            list: false
+          sign_up_sheet: 
+            team_details: true
+            signup_topics: true
+            delete_signup: true
+            signup: true
+          survey_response: 
+            submit: true
+            create: true
+          users: 
+            keys: true
+            list: false
+          permissions: 
+            list: false
+          leaderboard: 
+            index: true
+          review_mapping: 
+            assign_metareviewer_dynamically: true
+            release_reservation: true
+            list: false
+            add_dynamic_reviewer: true
+            assign_reviewer_dynamically: true
+            show_available_submissions: true
+          team: 
+            list: false
+            list_assignments: false
+          roles: 
+            list: false
+          grades: 
+            view_my_scores: true
+          survey_deployment: 
+            list: false
+          system_settings: 
+            list: false
+          content_pages: 
+            list: false
+            view: true
+            view_default: true
+        controllers: 
+          import_file: false
+          teams_users: false
+          course: false
+          menu_items: false
+          delete_object: false
+          response: true
+          tree_display: false
+          auth: false
+          course_evaluation: true
+          profile: true
+          student_task: true
+          institution: false
+          participants: false
+          assignment: false
+          site_controllers: false
+          statistics: false
+          markup_styles: false
+          admin: false
+          roles_permissions: false
+          advertise_for_partners: true
+          review_files: true
+          invitation: true
+          student_team: true
+          impersonate: false
+          questionnaire: false
+          suggestion: false
+          controller_actions: false
+          sign_up_sheet: false
+          export_file: false
+          eula: true
+          join_team_requests: true
+          student_review: true
+          survey: false
+          survey_response: true
+          users: true
+          permissions: false
+          leaderboard: true
+          password_retrieval: true
+          review_mapping: false
+          team: false
+          reports: true
+          roles: false
+          publishing: true
+          submitted_content: true
+          survey_deployment: false
+          participant_choices: false
+          grades: false
+          system_settings: false
+          content_pages: false
+        pages: 
+          admin: false
+          site_admin: false
+          notfound: true
+          contact_us: true
+          denied: true
+          credits: true
+          expired: true
+          home: true
+        permission_ids: 
+        - 8
+        - 4
+        - 3
+        role_id: 5
+        role_ids: 
+        - 5
+        - 1
+        updated_at: 2012-06-30 23:47:43 Z
+
+    default_page_id: 
+    updated_at: 2012-06-30 23:47:43
+    id: "5"
+    parent_id: "1"
+    description: ""
+  attributes_cache: {}
+

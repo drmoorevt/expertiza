@@ -1,21 +1,49 @@
 --- 
 - !ruby/object:Permission 
   attributes: 
-    name: Administer site
+    name: administer goldberg
     id: "1"
+  attributes_cache: {}
+
 - !ruby/object:Permission 
   attributes: 
-    name: Public pages - edit
-    id: "2"
-- !ruby/object:Permission 
-  attributes: 
-    name: Public pages - view
+    name: public pages - view
     id: "3"
+  attributes_cache: {}
+
 - !ruby/object:Permission 
   attributes: 
-    name: Public actions - execute
+    name: public actions - execute
     id: "4"
+  attributes_cache: {}
+
 - !ruby/object:Permission 
   attributes: 
-    name: Members only page -- view
-    id: "5"
+    name: administer pg
+    id: "6"
+  attributes_cache: {}
+
+- !ruby/object:Permission 
+  attributes: 
+    name: administer assignments
+    id: "7"
+  attributes_cache: {}
+
+- !ruby/object:Permission 
+  attributes: 
+    name: do assignments
+    id: "8"
+  attributes_cache: {}
+
+- !ruby/object:Permission 
+  attributes: 
+    name: administer instructors
+    id: "9"
+  attributes_cache: {}
+
+- !ruby/object:Permission 
+  attributes: 
+    name: administer courses
+    id: "10"
+  attributes_cache: {}
+

@@ -1,7 +1,70 @@
 --- 
 - !ruby/object:User 
   attributes: 
+    is_new_user: "0"
+    email_on_submission: "1"
     name: admin
-    role_id: "3"
+    handle: 
+    email_on_review_of_review: "1"
+    email_on_review: "1"
+    fullname: ""
+    role_id: "4"
     id: "2"
+    mru_directory_path: 
+    password_salt: 
+    persistence_token: d19f6fa2662b20087356ba809cceabfea5dc66ae7f6271f2a44228e893d2675fdd03ea405c6105e67dfd6097dd999b10b150bf7b2cb223c85cdeeca6a24e068f
+    digital_certificate: 
+    parent_id: "2"
     password: d033e22ae348aeb5660fc2140aec35850c4da997
+    leaderboard_privacy: "0"
+    master_permission_granted: "0"
+    private_by_default: "0"
+    email: ""
+  attributes_cache: {}
+
+- !ruby/object:User 
+  attributes: 
+    is_new_user: "1"
+    email_on_submission: "0"
+    name: dan
+    handle: 
+    email_on_review_of_review: "0"
+    email_on_review: "0"
+    fullname: dan
+    role_id: "1"
+    id: "3"
+    mru_directory_path: 
+    password_salt: 4GP9QQxARx8RVmW5yg
+    persistence_token: c35cbc1ad99b53f18535130e180d21111f637543711b60df9fae7fd6afcebdf8a61fc03c86c8697cc2322849d529f6f9a6e7c5c9f4f796660e00143b748ade38
+    digital_certificate: 
+    parent_id: "2"
+    password: 2f6eadde6ec13ad75b0eeef224fbf85e34149883
+    leaderboard_privacy: "0"
+    master_permission_granted: 
+    private_by_default: "0"
+    email: drmoore@gmail.com
+  attributes_cache: {}
+
+- !ruby/object:User 
+  attributes: 
+    is_new_user: "1"
+    email_on_submission: "0"
+    name: justin
+    handle: 
+    email_on_review_of_review: "0"
+    email_on_review: "0"
+    fullname: justin
+    role_id: "1"
+    id: "4"
+    mru_directory_path: 
+    password_salt: 4ki43ndLKeUXxI3u1TH
+    persistence_token: d735a75d255adb8ce23ab3a508a51aac3ec855505d43ca79a3b366d413c428b6fb6873bef0a934fcfe307d2d900e477ee591dd17fbd994b44a63be2d4686f3a9
+    digital_certificate: 
+    parent_id: "2"
+    password: fc44d5a56278b7b821b50f04f412a18c5d99ea71
+    leaderboard_privacy: "0"
+    master_permission_granted: 
+    private_by_default: "0"
+    email: justin@justin.com
+  attributes_cache: {}
+

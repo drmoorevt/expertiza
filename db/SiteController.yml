@@ -5,63 +5,389 @@
     permission_id: "1"
     id: "1"
     builtin: "1"
+  attributes_cache: {}
+
 - !ruby/object:SiteController 
   attributes: 
     name: controller_actions
     permission_id: "1"
     id: "2"
     builtin: "1"
+  attributes_cache: {}
+
 - !ruby/object:SiteController 
   attributes: 
     name: auth
     permission_id: "1"
     id: "3"
     builtin: "1"
+  attributes_cache: {}
+
 - !ruby/object:SiteController 
   attributes: 
     name: markup_styles
     permission_id: "1"
     id: "4"
     builtin: "1"
+  attributes_cache: {}
+
 - !ruby/object:SiteController 
   attributes: 
     name: menu_items
     permission_id: "1"
     id: "5"
     builtin: "1"
+  attributes_cache: {}
+
 - !ruby/object:SiteController 
   attributes: 
     name: permissions
     permission_id: "1"
     id: "6"
     builtin: "1"
+  attributes_cache: {}
+
 - !ruby/object:SiteController 
   attributes: 
     name: roles
     permission_id: "1"
     id: "7"
     builtin: "1"
+  attributes_cache: {}
+
 - !ruby/object:SiteController 
   attributes: 
     name: site_controllers
     permission_id: "1"
     id: "8"
     builtin: "1"
+  attributes_cache: {}
+
 - !ruby/object:SiteController 
   attributes: 
     name: system_settings
     permission_id: "1"
     id: "9"
     builtin: "1"
+  attributes_cache: {}
+
 - !ruby/object:SiteController 
   attributes: 
     name: users
-    permission_id: "1"
+    permission_id: "8"
     id: "10"
     builtin: "1"
+  attributes_cache: {}
+
 - !ruby/object:SiteController 
   attributes: 
     name: roles_permissions
     permission_id: "1"
     id: "11"
     builtin: "1"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: admin
+    permission_id: "1"
+    id: "12"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: course
+    permission_id: "7"
+    id: "13"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: assignment
+    permission_id: "7"
+    id: "14"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: questionnaire
+    permission_id: "7"
+    id: "15"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: participants
+    permission_id: "7"
+    id: "20"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: reports
+    permission_id: "8"
+    id: "21"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: institution
+    permission_id: "6"
+    id: "22"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: student_task
+    permission_id: "8"
+    id: "23"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: profile
+    permission_id: "8"
+    id: "26"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: survey_response
+    permission_id: "4"
+    id: "27"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: team
+    permission_id: "7"
+    id: "28"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: teams_users
+    permission_id: "7"
+    id: "29"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: impersonate
+    permission_id: "7"
+    id: "30"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: import_file
+    permission_id: "7"
+    id: "31"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: review_mapping
+    permission_id: "7"
+    id: "32"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: grades
+    permission_id: "7"
+    id: "33"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: course_evaluation
+    permission_id: "8"
+    id: "34"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: participant_choices
+    permission_id: "7"
+    id: "35"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: survey_deployment
+    permission_id: "7"
+    id: "36"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: statistics
+    permission_id: "7"
+    id: "37"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: tree_display
+    permission_id: "7"
+    id: "38"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: student_team
+    permission_id: "8"
+    id: "40"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: invitation
+    permission_id: "8"
+    id: "41"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: survey
+    permission_id: "7"
+    id: "42"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: password_retrieval
+    permission_id: "4"
+    id: "43"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: submitted_content
+    permission_id: "8"
+    id: "45"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: eula
+    permission_id: "8"
+    id: "46"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: student_review
+    permission_id: "8"
+    id: "47"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: publishing
+    permission_id: "8"
+    id: "48"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: export_file
+    permission_id: "7"
+    id: "49"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: response
+    permission_id: "8"
+    id: "50"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: sign_up_sheet
+    permission_id: "7"
+    id: "51"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: suggestion
+    permission_id: "7"
+    id: "52"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: leaderboard
+    permission_id: "4"
+    id: "53"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: delete_object
+    permission_id: "7"
+    id: "54"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: review_files
+    permission_id: "8"
+    id: "55"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: advertise_for_partners
+    permission_id: "8"
+    id: "56"
+    builtin: "0"
+  attributes_cache: {}
+
+- !ruby/object:SiteController 
+  attributes: 
+    name: join_team_requests
+    permission_id: "8"
+    id: "57"
+    builtin: "0"
+  attributes_cache: {}
+

@@ -1,26 +1,78 @@
 --- 
 - !ruby/object:RolesPermission 
   attributes: 
-    permission_id: "1"
-    role_id: "3"
-    id: "4"
-- !ruby/object:RolesPermission 
-  attributes: 
     permission_id: "3"
     role_id: "1"
     id: "6"
+  attributes_cache: {}
+
 - !ruby/object:RolesPermission 
   attributes: 
     permission_id: "2"
     role_id: "3"
     id: "7"
+  attributes_cache: {}
+
 - !ruby/object:RolesPermission 
   attributes: 
     permission_id: "4"
     role_id: "1"
     id: "9"
+  attributes_cache: {}
+
 - !ruby/object:RolesPermission 
   attributes: 
     permission_id: "5"
     role_id: "2"
     id: "10"
+  attributes_cache: {}
+
+- !ruby/object:RolesPermission 
+  attributes: 
+    permission_id: "6"
+    role_id: "4"
+    id: "11"
+  attributes_cache: {}
+
+- !ruby/object:RolesPermission 
+  attributes: 
+    permission_id: "1"
+    role_id: "4"
+    id: "12"
+  attributes_cache: {}
+
+- !ruby/object:RolesPermission 
+  attributes: 
+    permission_id: "7"
+    role_id: "2"
+    id: "14"
+  attributes_cache: {}
+
+- !ruby/object:RolesPermission 
+  attributes: 
+    permission_id: "7"
+    role_id: "3"
+    id: "15"
+  attributes_cache: {}
+
+- !ruby/object:RolesPermission 
+  attributes: 
+    permission_id: "7"
+    role_id: "4"
+    id: "16"
+  attributes_cache: {}
+
+- !ruby/object:RolesPermission 
+  attributes: 
+    permission_id: "9"
+    role_id: "4"
+    id: "17"
+  attributes_cache: {}
+
+- !ruby/object:RolesPermission 
+  attributes: 
+    permission_id: "8"
+    role_id: "1"
+    id: "18"
+  attributes_cache: {}
+

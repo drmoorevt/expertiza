@@ -3,7 +3,11 @@
   attributes: 
     name: Textile
     id: "1"
+  attributes_cache: {}
+
 - !ruby/object:MarkupStyle 
   attributes: 
     name: Markdown
     id: "2"
+  attributes_cache: {}
+
