@@ -114,6 +114,17 @@ function onChangeWikiType(){
 
  </tr>
 
+ <tr><td><label for="code_review">Code Review?</label></td>
+
+ <td>
+  		<select id="code_review" name="assignment[code_review]">
+  		 <option value=false style="width:75px">No</option>
+         <option value=true style="width:75px" <% if @assignment.code_review %>SELECTED<%end%>>Yes</option>
+        </select>
+  </td>
+
+ </tr>
+
 <tr id="team_count1" style="display:none">  
   <td valign="top" width="250" height="50"><label for="team_count">Maximum number of participants per team:</label></td>   
   <td valign="top"><%= text_field 'assignment', 'team_count', :size => 5%></td>  

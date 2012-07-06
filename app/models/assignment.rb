@@ -19,6 +19,12 @@ class Assignment < ActiveRecord::Base
   belongs_to  :instructor, :class_name => 'User', :foreign_key => 'instructor_id'    
   has_many :sign_up_topics, :foreign_key => 'assignment_id', :dependent => :destroy  
   has_many :response_maps, :foreign_key => 'reviewed_object_id', :class_name => 'ResponseMap'
+
+  attr_accessor :code_review
+  @code_review = false
+
+  #@code_review = false
+
   # TODO A bug in Rails http://dev.rubyonrails.org/ticket/4996 prevents us from using this:
   # has_many :responses, :through => :response_maps, :source => 'response'
 
@@ -604,8 +610,7 @@ end
     
   end
 
-
-  # Returns hash review_scores[reviewer_id][reviewee_id] = score
+  # Returns hash review_scores[reviewer_id][reviewee_id = score
   def compute_reviews_hash
     review_questionnaire_id = get_review_questionnaire_id()
     @questions = Question.find(:all, :conditions =>["questionnaire_id = ?", review_questionnaire_id])
