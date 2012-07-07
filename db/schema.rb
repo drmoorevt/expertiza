@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111217162506) do
+ActiveRecord::Schema.define(:version => 20120707144639) do
 
   create_table "assignment_questionnaires", :force => true do |t|
     t.integer "assignment_id"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20111217162506) do
     t.integer  "max_reviews_per_submission"
     t.integer  "review_topic_threshold",            :default => 0
     t.boolean  "availability_flag"
+    t.boolean  "code_review",                       :default => false
   end
 
   add_index "assignments", ["course_id"], :name => "fk_assignments_courses"

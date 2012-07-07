@@ -20,11 +20,6 @@ class Assignment < ActiveRecord::Base
   has_many :sign_up_topics, :foreign_key => 'assignment_id', :dependent => :destroy  
   has_many :response_maps, :foreign_key => 'reviewed_object_id', :class_name => 'ResponseMap'
 
-  attr_accessor :code_review
-  @code_review = false
-
-  #@code_review = false
-
   # TODO A bug in Rails http://dev.rubyonrails.org/ticket/4996 prevents us from using this:
   # has_many :responses, :through => :response_maps, :source => 'response'
 
@@ -68,6 +63,10 @@ class Assignment < ActiveRecord::Base
 
   def has_topics?
     @has_topics ||= !sign_up_topics.empty?
+  end
+
+  def is_code_review_assignment?
+    return self.code_review?
   end
 
   def assign_reviewer_dynamically(reviewer, topic)
