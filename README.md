@@ -1,5 +1,9 @@
 Code Review Dashboard Update:
 
+Note that the admin user/pass is: admin/expertiza
+user name1000 has submitted a file with a codereview assignment that user name1001 has reviewed and submitted comments on.
+You can impersonate either user to see what that user would view.
+
 1) Need to add an option to the assignment creation/edit page to say whether or not the assignment is a code-review assignment or not
    
      *Completed
