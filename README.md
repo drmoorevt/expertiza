@@ -1,16 +1,21 @@
 Code Review Dashboard Update:
 
 1) Need to add an option to the assignment creation/edit page to say whether or not the assignment is a code-review assignment or not
+   
    *Completed
 
 2) Suppress the display of the "Code Review Dashboard" link if it is not a code review assignment
+  
   *Completed
 
 3) Ensure Functionality
+   
    *Completed
 
 4) Add on-screen popups to explain how to use the functionality
+   
    *Popup when submitter submits code for a code review assignment
+   
    *Popup when a reviewer begins reviewing code
 
 Expertiza
