@@ -4,7 +4,7 @@ Code Review Dashboard Update:
    *Completed
 
 2) Suppress the display of the "Code Review Dashboard" link if it is not a code review assignment
-   *Completed
+  *Completed
 
 3) Ensure Functionality
    *Completed
