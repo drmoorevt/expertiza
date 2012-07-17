@@ -11,7 +11,7 @@
 <% if participant.assignment.wiki_type_id == 1%>
   <%= render :partial => 'submitted_files', :locals => {:participant => participant, :stage => stage} %>
     <br/><br/><br/><b>
-
+<!-- The following code causes the review dashboard to only populate if the assignment is a code review assignment-->
     <% if participant.assignment.is_code_review_assignment? %>
     <%= link_to "Code Review Dashboard" , :controller => 'review_files',
                 :action => 'show_all_submitted_files',

@@ -65,6 +65,9 @@ class Assignment < ActiveRecord::Base
     @has_topics ||= !sign_up_topics.empty?
   end
 
+  # @DRM adding a getter to determine if this assignment will be subject to code reviews.
+  # This var is stored in the DB and determines if the code review dashboard is populated
+  # on a review page.
   def is_code_review_assignment?
     return self.code_review?
   end

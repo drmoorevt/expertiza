@@ -1,3 +1,4 @@
+#The following migration adds the code review boolean to the database.
 class AssignmentCodeReview < ActiveRecord::Migration
   def self.up
     add_column :assignments,:code_review, :boolean, :default => false
