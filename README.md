@@ -1,3 +1,36 @@
+Code Review Peer Review Feedback:
+
+1) There should be comments for new method is_code_review_assignment?
+   -- Added comments to every modified file
+
+2) It wasn't very intuitive as to how to test your changes. Your README file should contain this.
+   It wasn't very clear which objects were modified in this project. 
+   -- The modified files are as follows:
+README.md	
+app/models/assignment.rb	
+app/views/assignment/_content.html.erb	
+app/views/review_files/show_all_submitted_files.html.erb	
+app/views/submitted_content/_main.html.erb	
+db/migrate/20120707144639_assignment_code_review.rb	
+db/schema.rb	
+  -- You can log in as admin and impersonate user: name1000 to see their submission for assignment 12-4. You will see that the
+     popup window shows up and provides instructions. You can also edit the assignment 12-4 and turn on/off code review.
+     You can also create a new code review / no code review assignment.
+     You can log in / impersonate name1001 to review name1000 work and provide comments per line of code.
+
+
+3) Can you comment the changes you made in the code? If you replaced any previous code just comment out that part so that I can know. 
+  -- Commented every line, thanks!
+
+4) Can you tell me password for the two users you were talking about in the readme file. I tried giving password as the password as told by the professor but it was not working on your vcl image.
+  -- The password for each user is expertiza, but its much easier to log in as admin and use the impersonate user function under the Manage toolbar.
+
+Also how can I check your point 1) in the readme file? The admin page for create assignment looked same for admin in my branch and your admin page.
+  -- Its there, either create a new assignment by clicking on Manage-> then hover over the assignment drop down. The next page will show you have the ability
+  to choose code review under the staggered deadline drop down menu.
+
+
+
 Code Review Dashboard Update:
 
 Note that the admin user/pass is: admin/expertiza
