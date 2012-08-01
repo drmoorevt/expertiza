@@ -347,7 +347,24 @@ class AssignmentParticipant < Participant
     new_submit = ResubmissionTime.new(:resubmitted_at => Time.now.to_s)
     self.resubmission_times << new_submit
   end
-  
+
+  def latest_resubmit_time
+   latestsubmit = ResubmissionTime.find(:first, :conditions=>['participant_id = ?',self.id], :order => 'resubmitted_at desc')
+    if !latestsubmit.nil?
+      return latestsubmit.resubmitted_at
+    end
+    return nil
+  end
+
+
+
+  def confirm_review
+  #save review request time
+    # we will check this with review time to decide if it is out of sync or not
+    self.Review_request = Time.now
+    self.save
+  end
+
   def set_student_directory_num
     if self.directory_num.nil? or self.directory_num < 0           
       maxnum = AssignmentParticipant.find(:first, :conditions=>['parent_id = ?',self.parent_id], :order => 'directory_num desc').directory_num

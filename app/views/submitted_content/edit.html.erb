@@ -1,5 +1,7 @@
 <%= render :partial => 'submitted_content/title' %>    
-
+<% if !@message.nil? %>
+  <p class="notice"><%= @message %></p>
+<% end %>
 <%@stage = @assignment.get_current_stage(@participant.topic_id)%>
 <%= render :partial => 'submitted_content/main', :locals => {:participant => @participant, :stage => @stage} %>
 <BR/>
