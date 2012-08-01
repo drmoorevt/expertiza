@@ -361,7 +361,7 @@ class AssignmentParticipant < Participant
   def confirm_review
   #save review request time
     # we will check this with review time to decide if it is out of sync or not
-    self.Review_request = Time.now
+    self.Reviewrequest = Time.now
     self.save
   end
 

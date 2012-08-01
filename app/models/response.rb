@@ -27,13 +27,20 @@ class Response < ActiveRecord::Base
     else
       code +=  self.updated_at.strftime('%A %B %d %Y, %I:%M%p') + '<br/>'
       code += '<B>Last submitted:</B> '
-      if self.updated_at < ResubmissionTime.find(Participant.find(self.map.reviewee_id).user_id).resubmitted_at
+      reviewrequesttime =  Participant.find(self.map.reviewee_id).Reviewrequest
+      assignmentid = Participant.find(self.map.reviewee_id).assignment.id
+      #review_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", assignmentid, 2])
+      #resubmission_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", assignmentid, 3])
+
+
+      if self.updated_at < reviewrequesttime
         code += '<FONT COLOR="FF0000">'
-        code += ResubmissionTime.find(Participant.find(self.map.reviewee_id).user_id).resubmitted_at.strftime('%A %B %d %Y, %I:%M%p') + '(Pending Review)'
+        code += '(Review request time:)'+reviewrequesttime + '(Pending Review)'
         code += '</FONT>'
       else
         code += ResubmissionTime.find(Participant.find(self.map.reviewee_id).user_id).resubmitted_at.strftime('%A %B %d %Y, %I:%M%p')
       end
+
     end
     code += '<div id="review_'+str+'" style=""><BR/><BR/>'
     
