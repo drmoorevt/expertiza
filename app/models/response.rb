@@ -34,8 +34,8 @@ class Response < ActiveRecord::Base
 
 
       if self.updated_at < reviewrequesttime
-        code += '<FONT COLOR="FF0000">'
-        code += '(Review request time:)'+reviewrequesttime + '(Pending Review)'
+        code += '<FONT COLOR="red">'
+        code += '(Review request time:)'+reviewrequesttime.to_s + '(Pending Review)'
         code += '</FONT>'
       else
         code += ResubmissionTime.find(Participant.find(self.map.reviewee_id).user_id).resubmitted_at.strftime('%A %B %d %Y, %I:%M%p')

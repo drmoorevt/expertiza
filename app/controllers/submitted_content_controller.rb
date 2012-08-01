@@ -88,29 +88,34 @@ class SubmittedContentController < ApplicationController
     participant = AssignmentParticipant.find(params[:id])
     return unless current_user_id?(participant.user_id)
 
+    @participant =participant
+    @assignment = participant.assignment
     assignmentid = participant.assignment.id
-    review_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", assignmentid, 2])
-    resubmission_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", assignmentid, 3])
+    review_due = DueDate.find(:first, :conditions => ["assignment_id = ? and  deadline_type_id = ?", assignmentid, 2])
+    resubmission_due = DueDate.find(:first, :conditions => ["assignment_id = ? and  deadline_type_id = ?", assignmentid, 3])
 
-    if review_due.nil?
-      review_due_time = review_due[0].due_at
+    if !review_due.nil?
+      review_due_time = review_due.due_at
     end
-    if resubmission_due.nil?
+    if !resubmission_due.nil?
       resubmission_due_time = resubmission_due[0].due_at
     end
 
 
     @message = "Message to confirm review request:<br>"
     #check if user can request re-review
-    if has_submissions?
+    if participant.has_submissions?
       @message += "You have submitted files.<br>"
       #we want to enable this after initial review phase
       latestsubmittime = participant.latest_resubmit_time
 
-      if latestsubmittime >= review_due and  latestsubmittime <= resubmission_due
+      if latestsubmittime.nil?
+        @message += "You did not resubmit files.<br>"
+      elsif latestsubmittime > review_due_time.to_time
         @message += "Latest submit time after initial review due and before resubmisison due.<br>"
         participant.confirm_review
         @message += "Review is confirmed.<br>"
+
       end
     else
       @message += "You don't' have submitted files.<br>"
