@@ -290,6 +290,15 @@ ActiveRecord::Schema.define(:version => 20111217162506) do
 
   add_index "responses", ["map_id"], :name => "fk_response_response_map"
 
+  create_table "responses_duplicate", :id => false, :force => true do |t|
+    t.integer  "id",                 :default => 0, :null => false
+    t.integer  "map_id",             :default => 0, :null => false
+    t.text     "additional_comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "version_num"
+  end
+
   create_table "resubmission_times", :force => true do |t|
     t.integer  "participant_id"
     t.datetime "resubmitted_at"
