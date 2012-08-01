@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111217162506) do
+ActiveRecord::Schema.define(:version => 20120801050419) do
 
   create_table "assignment_questionnaires", :force => true do |t|
     t.integer "assignment_id"
@@ -217,6 +217,7 @@ ActiveRecord::Schema.define(:version => 20111217162506) do
     t.integer  "topic_id"
     t.datetime "time_stamp"
     t.text     "digital_signature"
+    t.datetime "Reviewrequest"
   end
 
   add_index "participants", ["user_id"], :name => "fk_participant_users"
