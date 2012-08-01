@@ -25,7 +25,15 @@ class Response < ActiveRecord::Base
     if self.updated_at.nil?
       code += "Not available"
     else
-      code += self.updated_at.strftime('%A %B %d %Y, %I:%M%p')
+      code +=  self.updated_at.strftime('%A %B %d %Y, %I:%M%p') + '<br/>'
+      code += '<B>Last submitted:</B> '
+      if self.updated_at < ResubmissionTime.find(Participant.find(self.map.reviewee_id).user_id).resubmitted_at
+        code += '<FONT COLOR="FF0000">'
+        code += ResubmissionTime.find(Participant.find(self.map.reviewee_id).user_id).resubmitted_at.strftime('%A %B %d %Y, %I:%M%p') + '(Pending Review)'
+        code += '</FONT>'
+      else
+        code += ResubmissionTime.find(Participant.find(self.map.reviewee_id).user_id).resubmitted_at.strftime('%A %B %d %Y, %I:%M%p')
+      end
     end
     code += '<div id="review_'+str+'" style=""><BR/><BR/>'
     
