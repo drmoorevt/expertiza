@@ -365,6 +365,12 @@ class AssignmentParticipant < Participant
     self.save
   end
 
+  #user can request rereview if they have reviews for this assignment
+  def can_request_rereview
+     reviewlist = self.get_reviews
+    return !reviewlist.nil?
+  end
+
   def set_student_directory_num
     if self.directory_num.nil? or self.directory_num < 0           
       maxnum = AssignmentParticipant.find(:first, :conditions=>['parent_id = ?',self.parent_id], :order => 'directory_num desc').directory_num

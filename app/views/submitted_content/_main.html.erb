@@ -6,10 +6,14 @@
 	 <b>Submit a hyperlink:</b><BR/>
    <input type="text" name="submission" size=40 value="http://"><input type="submit" name="upload_link" value="Upload link"/>
 	<% end %>
-    <% form_tag :action=>'confirm_review', :id => participant.id do %>
-	 <b>Confirm review:</b><BR/>
-     <input type="submit" name="confirm_review" value="Confirm Review"/>
-	<% end %>
+
+    <% if participant.can_request_rereview %>
+        <% form_tag :action=>'confirm_review', :id => participant.id do %>
+         <b>Request re-review for existing reviews:</b><BR/>
+         <input type="submit" name="confirm_review" value="Request re-review"/>
+        <% end %>
+    <% end %>
+
 <% end %>	
 
 <% if participant.assignment.wiki_type_id == 1%>
