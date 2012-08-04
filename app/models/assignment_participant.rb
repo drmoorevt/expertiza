@@ -368,9 +368,20 @@ class AssignmentParticipant < Participant
   #user can request rereview if they have reviews for this assignment
   def can_request_rereview
      reviewlist = self.get_reviews
-     puts reviewlist.length
-     puts "@@@@@@@@@@@@@@"
-    return reviewlist.length > 0
+
+
+    if !self.assignment.nil?
+      assignmentid = self.assignment.id
+      review_due = DueDate.find(:first, :conditions => ["assignment_id = ? and  deadline_type_id = ?", assignmentid, 2])
+      puts "review due Time.now > review_due.due_at" +(Time.now > review_due.due_at).to_s
+      p review_due
+       #if they dont have review it should be null
+      if review_due.nil?
+        return false
+      end
+       return (reviewlist.length > 0) && (Time.now > review_due.due_at)
+    end
+    return false
   end
 
   def set_student_directory_num

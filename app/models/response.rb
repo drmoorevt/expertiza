@@ -26,19 +26,26 @@ class Response < ActiveRecord::Base
       code += "Not available"
     else
       code +=  self.updated_at.strftime('%A %B %d %Y, %I:%M%p') + '<br/>'
-      code += '<B>Last submitted:</B> '
+
       reviewrequesttime =  Participant.find(self.map.reviewee_id).Reviewrequest
       assignmentid = Participant.find(self.map.reviewee_id).assignment.id
+      participant =  Participant.find(self.map.reviewee_id)
       #review_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", assignmentid, 2])
       #resubmission_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", assignmentid, 3])
 
-
-      if self.updated_at < reviewrequesttime
-        code += '<FONT COLOR="red">'
-        code += '(Review request time:)'+reviewrequesttime.to_s + '(Pending Review)'
-        code += '</FONT>'
+      if !reviewrequesttime.nil?
+        if self.updated_at < reviewrequesttime
+          code += '<B>Last review request:</B> '
+          code += '<FONT COLOR="red">'
+          code += reviewrequesttime.strftime('%A %B %d %Y, %I:%M%p')
+          code += '</FONT>'
+        else
+          code += '<B>Last submitted:</B> '
+          code +=  participant.latest_resubmit_time.strftime('%A %B %d %Y, %I:%M%p')
+        end
       else
-        code += ResubmissionTime.find(Participant.find(self.map.reviewee_id).user_id).resubmitted_at.strftime('%A %B %d %Y, %I:%M%p')
+        code += '<B>Last submitted:</B> '
+        code += participant.latest_resubmit_time.strftime('%A %B %d %Y, %I:%M%p')
       end
 
     end

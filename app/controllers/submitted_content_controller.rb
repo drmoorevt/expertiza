@@ -113,6 +113,7 @@ class SubmittedContentController < ApplicationController
         @message += "You did not resubmit files.<br>"
       elsif latestsubmittime > review_due_time.to_time
         @message += "Latest submit time after initial review due and before resubmisison due.<br>"
+        participant.update_resubmit_times
         participant.confirm_review
         @message += "Review is confirmed.<br>"
 
