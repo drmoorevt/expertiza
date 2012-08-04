@@ -368,7 +368,9 @@ class AssignmentParticipant < Participant
   #user can request rereview if they have reviews for this assignment
   def can_request_rereview
      reviewlist = self.get_reviews
-    return !reviewlist.nil?
+     puts reviewlist.length
+     puts "@@@@@@@@@@@@@@"
+    return reviewlist.length > 0
   end
 
   def set_student_directory_num
