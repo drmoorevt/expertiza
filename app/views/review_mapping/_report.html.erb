@@ -4,160 +4,224 @@
 
     <% # finding the review due dates for the assignmnent %>
     <% @review_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", @id, 2])  %>
-    <% @resubmission_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", @id, 3])  %>
-    <% @rereview_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", @id, 4])  %>
 
-    <% @review_due_time = @review_due[0].due_at %>
-    <% @resubmission_due_time = @resubmission_due[0].due_at %>
-    <% @rereview_due_time = @rereview_due[0].due_at %>
-    <% puts "Review due: " + @review_due_time.to_s %>
-    <% puts "Resubmission due: " + @resubmission_due_time.to_s %>
-    <% puts "Rereview due: " + @rereview_due.to_s %>
+    <%# check if the assignment has more than 1 review stage (ie. resubmission and re-review %>
+    <% @num_reviews = @assignment.get_review_rounds %>
+    <% if (@num_reviews > 1) %>
+        <% @resubmission_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", @id, 3])  %>
+        <% @rereview_due = DueDate.find(:all, :conditions => ["assignment_id = ? and  deadline_type_id = ?", @id, 4])  %>
+    <% end %>
 
     <table><tr>
-        <th width = "33%"> Review Due: <%=@review_due_time.to_time.strftime("%m/%d/%Y - %I:%M%p") %>  </th>
-        <th width = "33%"> ReSubmission Due: <%=@resubmission_due_time.to_time.strftime("%m/%d/%Y - %I:%M%p") %> </th>
-        <th width = "33%"> ReReview Due: <%=@rereview_due_time.to_time.strftime("%m/%d/%Y - %I:%M%p") %> </th>
+        <th width = "33%"> Review Due:
+            <% if @review_due.any? %>
+                <% @review_due_time = @review_due[0].due_at %>
+                <%=@review_due_time.to_time.strftime("%m/%d/%Y - %I:%M%p") %>
+            <% end%>
+        </th>
+        <% if @num_reviews > 1 %>
+            <th width = "33%"> ReSubmission Due:
+                <% if @resubmission_due.any? %>
+                    <% @resubmission_due_time = @resubmission_due[0].due_at %>
+                    <%=@resubmission_due_time.to_time.strftime("%m/%d/%Y - %I:%M%p") %>
+                <% end%>
+            </th>
+            <th width = "33%"> ReReview Due:
+                <% if @rereview_due.any? %>
+                    <% @rereview_due_time = @rereview_due[0].due_at %>
+                    <%=@rereview_due_time.to_time.strftime("%m/%d/%Y - %I:%M%p") %>
+                <% end%>
+            </th>
+        <% end %>
     </tr> <tr> </tr></table>
 
     <table width="100%" cellspacing="0" cellpadding="2" border="0">
         <tr bgcolor="#CCCCCC">
-            <th width = "14%">
+            <th width = "15%">
                 Reviewer
             </th>
-            <th width = "19%">
-                Reviews/ReReviews/
+            <th width = "15%">
+                Reviews/
+              <% if (@num_reviews > 1) %>
+                ReReviews/
+              <%end%>
               <% if @assignment.team_assignment %>
-                Teams
-				<% else %>
-				Participants
-				<% end %>
+                Team
+			  <% else %>
+				Participant
+			  <% end %>
             </th>
-            <th width = "20%">
+            <th width = "15%">
             	<% if @assignment.team_assignment %>
                 Team Reviewed
 				<% else %>
 				Participant Reviewed
 				<% end %>
             </th>
-            <th width = "8%">
+            <th width = "6%">
                 Score Awarded
             </th>
-			<th width = "8%">
+			<th width = "6%">
                 Avg. Score
             </th>
-            <th width = "16%">
+            <th width = "13%">
                 Score Range
             </th>
-            <th width = "20%">
+            <th width = "15%">
                 Last Reviewed At
             </th>
+            <% if (@num_reviews > 1) %>
+              <th width = "15%">
+                  Last ReReviewed At
+              </th>
+            <%end%>
         </tr>
 
         <%@l = -1 %>
         <% @reviewers.each do |r| %>
-		<% @this_reviewer = r.reviewer_id %>
+
+            <% @this_reviewer = r.reviewer_id %>
             <% @rev_count = 0 %>
             <% @rerev_count = 0 %>
-            <% @rspan = 0 %>
             <% @total_count = 0 %>
+
+            <% @reviewer_array = Array.new %>
 
             <%@l = @l+1 %>
 
             <% # Getting each particpant user name%>
             <% participant_id = Participant.find(r.reviewer_id).user_id%>
             <% username = User.find(participant_id).fullname%>
-            <% puts "Reviewer Username = " + username %>
 
             <% # Iterating over each reviews done by the reviewer for this assignment%>
             <% (ResponseMap.find(:all, :conditions => ["reviewed_object_id = ? AND reviewer_id = ? AND type = ?", @id, r.reviewer_id,@type])).each do |ri| %>
+
+                <% @reviewer_array[ri.id] = {} %>
 
                 <% # Getting the review responses for each reviews%>
                 <% @resp_array = Array.new %>
                 <% @resp_array = Response.find(:all, :conditions => ["map_id = ?", ri.id])  %>
                 <% @responses = @resp_array.length %>
 
-                <% # Review is done only if there is atleast one response record%>
+                <% @reviewer_array[ri.id]["total_responses"] = @responses %>
+
+                <% # Review is considered done only if there is atleast one response record%>
                 <% if (@responses > 0) %>
 
-                    <% @resp_sorted = @resp_array.sort { |m1,m2| (m1.version_num and m2.version_num) ? m2.version_num <=> m1.version_num : (m1.version_num ? -1 : 1)} %>
+                    <% # Finding the reviews that were updated before review_due date%>
+                    <% @isUpdated = true %>
+                    <% @rev_resp_array = Array.new %>
 
-                    <% # Fetching the first and the last version & time of review by this reviewer%>
-                    <% @latest_version_num = @resp_sorted[0].version_num %>
-                    <% @latest_version_time = @resp_sorted[0].updated_at %>
+                    <% @rev_resp_array = Response.find(:all, :conditions => ["map_id = ? AND updated_at <= ?", ri.id, @review_due_time])  %>
+                    <% if (@rev_resp_array.length == 0)%>
+                        <%#  If there are no reviews that were updated, then find if there are any that were created before the review_due_date%>
+                        <% @rev_resp_array = Response.find(:all, :conditions => ["map_id = ? AND created_at <= ?", ri.id, @review_due_time])  %>
+                        <% @isUpdated = false %>
+                    <% end %>
 
-                    <% @first_version_num = @resp_sorted[@resp_sorted.size - 1].version_num %>
-                    <% @first_version_time = @resp_sorted[@resp_sorted.size - 1].created_at %>
+                    <% @rev_responses = @rev_resp_array.length%>
+                    <% @reviewer_array[ri.id]["valid_reviews"] = @rev_responses %>
 
-                    <% puts " first review version = " + @first_version_num.to_s %>
-                    <% puts " first review time = " + @first_version_time.to_s %>
+                    <% if (@rev_responses > 0) %>
+                        <% @rev_resp_sorted = @rev_resp_array.sort { |m1,m2| (m1.version_num and m2.version_num) ? m2.version_num <=> m1.version_num : (m1.version_num ? -1 : 1)} %>
 
-                    <% # If the first version is before the review due date,then review is considered done%>
-                    <% if(@first_version_time <= @review_due_time) %>
+                        <% # Updating the latest review time based on updated or created time as applicable%>
+                        <%if (@isUpdated) %>
+                            <% @reviewer_array[ri.id]["last_review_time"] = @rev_resp_sorted[0].updated_at %>
+                        <%else %>
+                            <% @reviewer_array[ri.id]["last_review_time"] = @rev_resp_sorted[0].created_at %>
+                        <% end %>
+
+                        <% # If there is a review response before review_due_date, we consider REVIEW as done%>
                         <% @rev_count= @rev_count + 1 %>
-                        <% puts " Review DONE" %>
                     <% end %>
 
-                    <% puts " latest review version = " + @latest_version_num.to_s %>
-                    <% puts " latest review time = " + @latest_version_time.to_s %>
+                    <% # Finding if there are re-reviews that was last updated between resubmission due date and rereview_due date%>
+                    <% if @num_reviews > 1 %>
+                        <% @isUpdated = true %>
+                        <% @rerev_resp_array = Array.new %>
+                        <% @rerev_resp_array = Response.find(:all, :conditions => ["map_id = ? AND updated_at between ? and ?", ri.id, @resubmission_due_time, @rereview_due_time])  %>
+                        <% if (@rerev_resp_array.length == 0)%>
+                            <%#  If there are no re-reviews that were updated, then find if there are any that were created between resubmission due date and rereview_due date%>
+                            <% @rerev_resp_array = Response.find(:all, :conditions => ["map_id = ? AND created_at between ? and ?", ri.id, @resubmission_due_time, @rereview_due_time]) %>
+                            <% @isUpdated = false %>
+                        <% end %>
 
-                    <% # If the last version is after the resubmission due date and before rereview date,then re-review is considered done%>
-                    <% if(@latest_version_time >= @resubmission_due_time and @latest_version_time <= @rereview_due_time) %>
-                        <% @rerev_count = @rerev_count + 1 %>
-                        <% puts " Re-Review DONE" %>
+                        <% @rerev_responses = @rerev_resp_array.length%>
+                        <% @reviewer_array[ri.id]["valid_rereviews"] = @rerev_responses %>
+
+                        <% if (@rerev_responses > 0) %>
+                            <% @rerev_resp_sorted = @rerev_resp_array.sort { |m1,m2| (m1.version_num and m2.version_num) ? m2.version_num <=> m1.version_num : (m1.version_num ? -1 : 1)} %>
+
+                            <% # Updating the latest rereview time based on updated or created time as applicable%>
+                            <%if (@isUpdated) %>
+                                <% @reviewer_array[ri.id]["last_rereview_time"] = @rerev_resp_sorted[0].updated_at %>
+                            <%else %>
+                                <% @reviewer_array[ri.id]["last_rereview_time"] = @rerev_resp_sorted[0].created_at %>
+                            <% end %>
+
+                            <% # If there is a review response between resubmission due date and rereview_due date, we consider REVIEW as done%>
+                            <% @rerev_count = @rerev_count + 1 %>
+                        <% end %>
                     <% end %>
-                <% else %>
-                    <% puts " Review NOT DONE" %>
                 <% end %>
 
-
-                <% if (Team.find(:all, :conditions => { :id => ri.reviewee_id}).length > 0) %>
-                    <% @rspan = @rspan + 1 %>
-                <% end %>
-
-                <% # total reviews done by the reviewer for this assignment%>
+                <% # total teams/items reviewed for this assignment%>
                 <% @total_count = @total_count + 1 %>
             <%end %>
+
             <%if r.reviewer_id != -1 %>
 
                 <% if (@l%2) == 0 %>
                     <tr bgcolor="#ffffff">
-                        <td bgcolor="#ffffff" rowspan= <%= @rspan%>>
+                        <td bgcolor="#ffffff" rowspan= <%= @total_count%>>
                             <%= link_to_remote_redbox  username, :url => {:controller => 'popup', :action => 'reviewer_details_popup', :id => r.reviewer_id} %>
                         </td>
-                    
                  <%else %>
                     <tr bgcolor="#DDDDBB">
-                        <td bgcolor="#DDDDBB" rowspan=<%= @rspan%>>
+                        <td bgcolor="#DDDDBB" rowspan=<%= @total_count%>>
                             <%= link_to_remote_redbox  username, :url => {:controller => 'popup', :action => 'reviewer_details_popup', :id => r.reviewer_id} %>
                         </td>
-
                 <%end %>
+
+                <% if @num_reviews < 2 %>
+                    <%# this is to avoid the reformatting colorissue is next statement %>
+                    <% @rerev_count =  @total_count %>
+                <% end %>
 
                 <%#if both reviews and re-reviews are done for all reviews, then display the record in normal color %>
                 <%if (@rev_count == @total_count and @rerev_count == @total_count) %>
-                   <td align = "center" rowspan= <%= @rspan%>>
-                        <%= @rev_count %>/<%= @rerev_count %>/<%= @rspan %>
+                   <td align = "center" rowspan= <%= @total_count%>>
+                        <%= @rev_count %>/
+                        <% if @num_reviews > 1 %>
+                            <%= @rerev_count %>/
+                        <%end%>
+                        <%= @total_count %>
                     </td>
                 <%else %>
-                    <td align = "center" rowspan= <%= @rspan%> style = "color:#DD3300">
-                        <%= @rev_count %>/<%= @rerev_count %>/<%= @rspan %>
+                    <td align = "center" rowspan= <%= @total_count%> style = "color:#DD3300">
+                        <%= @rev_count %>/
+                        <% if @num_reviews > 1 %>
+                            <%= @rerev_count %>/
+                        <%end%>
+                        <%= @total_count %>
                     </td>
                 <%end %>
 
                 <% (ResponseMap.find(:all, :conditions => ["reviewed_object_id = ? AND reviewer_id = ? AND type = ?", @id, r.reviewer_id, @type])).each do |ri| %>
                     <% if (Response.find_by_map_id(ri.id)) %>
+
                         <%if @assignment.team_assignment && Team.find(:all, :conditions => { :id => ri.reviewee_id}).length > 0 %>
                             <%@team = Team.find(ri.reviewee_id) %>
                             <% @teamid = @team.id%>
-                                <% if (@l%2) == 0 %>
-                                    <td id = "green" bgcolor="#ffffff" align = 'center' colspan=1>
-                                <%else %>
-                                    <td id = "green" bgcolor="#DDDDBB" align = 'center' colspan=1>
-                                <%end %>
-                                <%= link_to_remote_redbox Team.find(ri.reviewee_id).name, :url => {:controller => 'popup', :action => 'team_users_popup', :id => ri.reviewee_id, :id2 => ri.id} %>
+                            <% if (@l%2) == 0 %>
+                                <td id = "green" bgcolor="#ffffff" align = 'center' colspan=1>
+                            <%else %>
+                                <td id = "green" bgcolor="#DDDDBB" align = 'center' colspan=1>
+                            <%end %>
+                            <%= link_to_remote_redbox Team.find(ri.reviewee_id).name, :url => {:controller => 'popup', :action => 'team_users_popup', :id => ri.reviewee_id, :id2 => ri.id} %>
 
-                                </td>
+                            </td>
                             <%= render :partial => 'teamscore' %>
 
                             <% if (@l%2) == 0 %>
@@ -165,9 +229,29 @@
                             <%else %>
                                 <td bgcolor="#DDDDBB" align = 'center'>
                             <%end %>
-                               <%= @latest_version_time.to_time.strftime("%m/%d/%Y - %I:%M%p") %>
+                            <%# if there are valid reviews then mark the latest-review time  %>
+                            <%if @reviewer_array[ri.id]["valid_reviews"] > 0 %>
+                                <%= @reviewer_array[ri.id]["last_review_time"].to_time.strftime("%m/%d/%Y - %I:%M%p") %>
+                            <%else %>
+                                Invalid
+                            <%end %>
                             </td>
-                        <tr/>
+
+                            <% if @num_reviews > 1 %>
+                                <% if (@l%2) == 0 %>
+                                    <td bgcolor="#ffffff" align = 'center'>
+                                <%else %>
+                                    <td bgcolor="#DDDDBB" align = 'center'>
+                                <%end %>
+                                <%# if there are valid Rereviews then mark the latest-review time  %>
+                                <%if @reviewer_array[ri.id]["valid_rereviews"] > 0 %>
+                                    <%= @reviewer_array[ri.id]["last_rereview_time"].to_time.strftime("%m/%d/%Y - %I:%M%p") %>
+                                <%else %>
+                                    Invalid
+                                <%end %>
+                                </td>
+                            <%end %>
+                        </tr>
 
                         <% elsif !@assignment.team_assignment %>
                             <% @participantid = (Participant.find(ri.reviewee_id)).user_id %>
@@ -188,10 +272,10 @@
                             <%else %>
                                 <td bgcolor="#DDDDBB" align = 'center'>
                             <%end %>
-                                   <%=  Response.find(:first,:conditions=>["map_id = ?", ri.id]).updated_at.to_time.strftime("%m/%d/%Y - %I:%M%p") %>
-                            
+                            <%=  Response.find(:first,:conditions=>["map_id = ?", ri.id]).updated_at.to_time.strftime("%m/%d/%Y - %I:%M%p") %>
                             </td>
-                            <tr/>
+
+                            </tr>
                         <%end %>
 
                     <% else %>
@@ -211,9 +295,18 @@
                             <%else %>
                                 <td bgcolor="#DDDDBB" style ="color:#DD3300" align = 'center'>
                             <%end %>
-                            No
-                            </td>
-                            <tr/>
+                            None
+                            <N/td>
+                            <% if @num_reviews > 1 %>
+                                <% if (@l%2) == 0 %>
+                                    <td bgcolor="#ffffff" style ="color:#DD3300" align = 'center'>
+                                <%else %>
+                                    <td bgcolor="#DDDDBB" style ="color:#DD3300" align = 'center'>
+                                <%end %>
+                                None
+                                </td>
+                            <% end %>
+                            </tr>
                         <% elsif !@assignment.team_assignment %>
                             <% @participantid = Participant.find(ri.reviewee_id).user_id %>
                             <% @myuser = 0%>
@@ -234,9 +327,18 @@
                            <%else %>
                                 <td bgcolor="#DDDDBB" align = 'center'>
                            <%end %>
-                                No
-                                </td>
-                                <tr/>
+                           <% if @num_reviews > 1 %>
+                               None
+                               </td>
+                               <% if (@l%2) == 0 %>
+                                   <td bgcolor="#ffffff" align = 'center'>
+                               <%else %>
+                                   <td bgcolor="#DDDDBB" align = 'center'>
+                               <%end %>
+                               None
+                               </td>
+                           <% end %>
+                           </tr>
                       <%end %>
                   <%end %>
               <%end %>
