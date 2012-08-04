@@ -72,7 +72,7 @@
                %>
     <!-- show the link as Update review when author requested review and latest review is old -->
              <% if !participant.Reviewrequest.nil? && @largest_version_num.created_at < takethis %>
-               <td><%= link_to "Update Review", {:controller => 'response', :action => 'new', :id => map.id} %></td>
+               <td style="color:red !important;"> <%= link_to "Update Review", {:controller => 'response', :action => 'new', :id => map.id} %></td>
              <% elsif  (deadline_version.due_at == deadline_time.due_at) %>
               <td><%= link_to "Edit", {:controller => 'response', :action => 'edit', :id => @sorted[0].id} %></td>
              <% else %>
