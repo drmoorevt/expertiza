@@ -105,6 +105,7 @@
 
                 <% @reviewer_array[ri.id]["total_responses"] = @responses %>
 
+
                 <% # Review is considered done only if there is atleast one response record%>
                 <% if (@responses > 0) %>
 
@@ -232,6 +233,7 @@
                             <%# if there are valid reviews then mark the latest-review time  %>
                             <%if @reviewer_array[ri.id]["valid_reviews"] > 0 %>
                                 <%= @reviewer_array[ri.id]["last_review_time"].to_time.strftime("%m/%d/%Y - %I:%M%p") %>
+
                             <%else %>
                                 Invalid
                             <%end %>
@@ -272,7 +274,7 @@
                             <%else %>
                                 <td bgcolor="#DDDDBB" align = 'center'>
                             <%end %>
-                            <%=  Response.find(:first,:conditions=>["map_id = ?", ri.id]).updated_at.to_time.strftime("%m/%d/%Y - %I:%M%p") %>
+                            <%=  Response.find(:last,:conditions=>["map_id = ?", ri.id]).updated_at.to_time.strftime("%m/%d/%Y - %I:%M%p") %>
                             </td>
 
                             </tr>
